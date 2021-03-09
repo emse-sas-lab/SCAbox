@@ -6,6 +6,7 @@ SCABox Evaluation Framework
     :alt: license
 
 
+
 .. image:: https://img.shields.io/github/deployments/emse-sas/sca_framework/github-pages
     :target: https://emse-sas.github.io/sca_framework/
     :alt: pages
