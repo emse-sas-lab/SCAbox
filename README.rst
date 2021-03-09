@@ -10,7 +10,7 @@ SCABox Evaluation Framework
     :target: https://emse-sas.github.io/sca_framework/
     :alt: pages
 
-`Website <https://emse-sas.github.io/sca_framework/>`_
+`Website <https://emse-sas-lab.github.io/SCAbox/>`_
 
 SCABox is a framework that provide *tools* and *materials* to perform side-channel analysis.
 It provides software, embedded and hardware features gathered in a *hybrid* test-bench that performs *acquisitions* and *attacks*.
