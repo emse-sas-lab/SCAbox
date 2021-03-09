@@ -1,0 +1,27 @@
+language: python
+python:
+- 3.8
+install:
+- pip install sphinx sphinx_rtd_theme sphinx-argparse recommonmark sphinxext-remoteliteralinclude
+
+before_deploy:
+- openssl aes-256-cbc -K $encrypted_ca900dc076ce_key -iv $encrypted_ca900dc076ce_iv -in deploy_sca.enc -out deploy_sca -d
+
+
+scripts:
+- echo "Generating documentation..."
+- cd docs/sources
+- make html
+- cd ../build/all/html
+- touch .nojekyll
+- cd ../../../../
+
+deploy:
+  provider: pages:git
+  email: sami@dahoux.net
+  deploy_key: deploy_sca
+  local_dir: docs/build/all/html
+  keep_history: true
+  edge: true
+  on:
+    branch: master
