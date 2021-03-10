@@ -5,7 +5,7 @@ SCABox Evaluation Framework
     :target: https://choosealicense.com/licenses/mit/
     :alt: license
 
-:fire: `Official project website <https://emse-sas-lab.github.io/SCAbox/>`_ :fire:
+`Official project website <https://emse-sas-lab.github.io/SCAbox/>`_ :fire:
 
 SCABox is a framework that provide *tools* and *materials* to perform side-channel analysis.
 It provides software, embedded and hardware features gathered in a *hybrid* test-bench that performs *acquisitions* and *attacks*.
