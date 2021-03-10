@@ -52,5 +52,5 @@ Conclusion
 
 You successfully downloaded the SCAbox project. In the next tutorial we will use it to perform FPGA-based side-channel attacks. 
 
-Click **Next** to start the `Tuto #1 <installation.html>`_: Run the Pre-Built Demo.
+Click **Next** to start the `Tuto #1 <test.html>`_: Run the Pre-Built Demo.
 

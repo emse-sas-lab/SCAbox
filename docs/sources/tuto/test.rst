@@ -22,6 +22,7 @@ Requirements
 - A micro USB cable 
 - Any terminal emulator such as PuTTY, TeraTerm or picocom
 - Python version :math:`\geq` 3.8
+- `Tuto #0 <download.html>`_: Download the SCAbox Framework.
 
 .. note::
 	Because it uses pre-built images, this tutorial is board dependent. 

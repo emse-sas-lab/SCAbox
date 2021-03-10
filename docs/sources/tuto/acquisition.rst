@@ -40,7 +40,7 @@ A simple acquisition consists in acquiring the sensor state and storing it into 
 
 The latter is then read by the C program and the acquired values are exported through UART.
 
-To perform a simple acquisition type the following command:
+1. To perform a simple acquisition type the following command:
 
 .. code-block:: shell
 
@@ -53,7 +53,7 @@ If the command executed successfully you should have an output similar to the on
    :alt: FIFO output simple
    :align: center
 
-if you want the sensor output to be printed in number instead of char code use the option verbose ``-v`` :
+2. If you want the sensor output to be printed in number instead of char code use the option verbose ``-v`` :
 
 .. code-block:: shell
 
@@ -63,7 +63,7 @@ if you want the sensor output to be printed in number instead of char code use t
   This command prints all the FIFO content. The default SCAbox FIFO depth is **8192**.
 
 .. note::
-  With sensors running @200 Mhz we can monitor the leakage for a duration of 40µs. You can increase the FIFO depth and reduce the sensor sampling frequency to increase the acquisition duration.
+  With sensors running at **200 MHz**, we can monitor the leakage for a duration of **40µs**. You can increase the FIFO depth and reduce the sensor sampling frequency to increase the acquisition duration.
 
 
 2. Cropped acquisition
@@ -72,7 +72,7 @@ if you want the sensor output to be printed in number instead of char code use t
 A cropped acquisition is a simple acquisition where the data is cropped at its start and end.
 The resulting data will contain :math:`e - s` samples excluding the e-th one. 
 
-To perform a cropped acquisition type the following command
+1. To perform a cropped acquisition type the following command
 
 .. code-block:: shell
 
@@ -92,13 +92,14 @@ If the command executed successfully you should have an output similar to bellow
 A crypto-algorithm acquisition consists in acquiring the sensor state  during a cryptographic computation and storing these values into the FIFO.
 The FIFO is then read by the demo and the acquired values are sent via UART.
 
-To acquire a simple run of crypto-algorithm for instance a simple AES encryption. 
+1. To acquire a simple run of crypto-algorithm for instance a simple AES encryption. 
 
 .. code-block:: shell
 
     > aes -m [mode] -d [data] -k [key]
 
 In this demo, the **mode** argument can be either:
+
 - ``hw`` for VHDL hardware AES
 - ``tiny`` for C tiny AES
 - ``ssl`` for C OpenSSL AES
@@ -107,13 +108,13 @@ In this demo, the **mode** argument can be either:
 The **data** argument is the plaintext in hexadecimal.
 The **key** argument is the secret key in hexadecimal.
 
-For instance, type the following command:
+2. For instance, type the following command:
 
 .. code-block:: shell
 
     > aes -m hw -d 00112233445566778899aabbccddeeff -k 000102030405060708090a0b0c0d0e0f
 
-If the command executed successfully you should have an output similar to bellow in your terminal emulator :
+3. If the command executed successfully you should have an output similar to bellow in your terminal emulator :
 
 .. image:: media/img/testaes.png
    :width: 400
@@ -134,7 +135,7 @@ Note that no sensor value is displayed but the FIFO has effectively been filled.
 .. note::
     As you can see in the above picture, some Ascii caracters cannot be displayed properly using the PuTTY interface. However, they will be correctly saved in a log file.
 
-**You can perform a cropped acquisition of crypto-algorithm:**
+4. **You can perform a cropped acquisition of crypto-algorithm:**
 
 .. code-block:: shell
 

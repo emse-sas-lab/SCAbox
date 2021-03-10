@@ -22,7 +22,7 @@ For more information please check out our paper introducing SCAbox: PAPER_PATH
 Content
 ---------------------------------------------------------------
 
-This website provides a `series of tutorials <home.html>`_ in which you will learn how to setup and use the SCAbox framework.
+This website provides a `series of tutorials <tuto/home.html>`_ in which you will learn how to setup and use the SCAbox framework.
 
 Please follow the tutorial order to setup the framework. You can stop the tutorials at any step depending on your needs. The content of each tutorial is described below:
 
