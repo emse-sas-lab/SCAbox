@@ -1,0 +1,28 @@
+name: gh-pages deployment
+
+on: 
+  push:
+    branches: 
+      - master
+      - deployment 
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - 
+        name: Building sphinx docs
+        uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "docs/sources"
+      - 
+        name: Deploying docs to gh-pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: docs/build/all/html
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
