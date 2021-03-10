@@ -23,3 +23,6 @@ jobs:
         with:
           target_branch: deployement
           build_dir: docs/build
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
