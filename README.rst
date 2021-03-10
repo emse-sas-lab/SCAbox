@@ -1,6 +1,12 @@
 SCAbox Evaluation Framework
 ***************************************************************
 
+.. raw:: html
+
+    <p align="center">
+    <img src="https://github.com/emse-sas-lab/SCAbox/blob/master/docs/sources/media/img/SCAbox_logo.png" height="250px">
+    </p>
+    
 .. image:: https://img.shields.io/github/license/emse-sas/sca_framework
     :target: https://choosealicense.com/licenses/mit/
     :alt: license
@@ -12,10 +18,9 @@ It provides software and hardware features gathered in a *heterogeneous* device 
 
 *Only a Zynq-based development board is needed. All the side-channel analysis (SCA) acquisition is performed inside the SoC.*
 
-.. image:: https://github.com/emse-sas-lab/SCAbox/blob/master/docs/sources/media/img/SCAbox_logo.png
-  :width: 300
-  :alt: logo
-  
+
+
+
 Overview
 ---------------------------------------------------------------
 
