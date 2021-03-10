@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>#2 - Install SCAbox &mdash; SCAbox 1.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="#3 - Use SCAbox" href="acquisition.html" />
+    <link rel="prev" title="#1 - Run the Pre-Built Demo" href="test.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCAbox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="home.html#tutorials">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="download.html">#0 - Download SCAbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">#1 - Run the Pre-Built Demo</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">#2 - Install SCAbox</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#goals">Goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emulator-setup">Emulator setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorial">Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-the-hardware">Install the Hardware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generate-the-hardware">Generate the hardware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-the-software">Install the Software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-the-application">Launch the application</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="acquisition.html">#3 - Use SCAbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">#4 - Build your Own Designs</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/home.html#contents">Contents</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCAbox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="home.html">Home</a> &raquo;</li>
+        
+      <li>#2 - Install SCAbox</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/tuto/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="install-scabox">
+<h1>#2 - Install SCAbox<a class="headerlink" href="#install-scabox" title="Permalink to this headline">¶</a></h1>
+<p><strong>Duration:</strong> 1-2 hours (more if you need to download the Xilinx tools)</p>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<p>The goal of this installation tutorial is to setup the SCAbox framework.</p>
+<p>This can be done in two steps :</p>
+<ol class="arabic simple">
+<li><p>Install the <strong>hardware</strong> and build the VHDL bitstream.</p></li>
+<li><p>Install the <strong>software</strong> and build the C program.</p></li>
+</ol>
+<p>At the end of this tutorial you will able to run your own synthetized and compiled version of the <a class="reference external" href="test.html">Tuto #1</a>.</p>
+<p>This tutorial is mandatory if you want to customize the framework by adding sensors, crypto-cores or use another development board.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A Xilinx Zynq-7000 SoC development board</p></li>
+<li><p>A micro USB cable</p></li>
+<li><p>Xilinx Vivado IDE</p></li>
+<li><p>Xilinx Vitis SDK</p></li>
+<li><p>Any terminal emulator such as PuTTY, TeraTerm or picocom</p></li>
+<li><p><a class="reference external" href="download.html">Tuto #0</a>: Download the SCAbox Framework.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here’s the setup we used to create this tutorial: Linux 20.04, Digilent Zybo z7-10 board, Vivado 2020.1, Vitis 2020.1, Putty.</p>
+</div>
+</div>
+<div class="section" id="emulator-setup">
+<h2>Emulator setup<a class="headerlink" href="#emulator-setup" title="Permalink to this headline">¶</a></h2>
+<p>The terminal emulator allows to communicate via UART with the SoC.
+It must be configured properly in order to work and allow command typing.
+Bellow is given the emulator configuration used :</p>
+<ul class="simple">
+<li><p>port is        : /dev/ttyUSBx</p></li>
+<li><p>flowcontrol    : none</p></li>
+<li><p>baudrate is    : 921600</p></li>
+<li><p>parity is      : none</p></li>
+<li><p>databits are   : 8</p></li>
+<li><p>stopbits are   : 1</p></li>
+<li><p>local echo is  : yes</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If your terminal provide it, you can also use the local line edit.</p></li>
+<li><p>Port name can vary according to your OS, eg. on windows its COMx</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+<p>The tutorial starts here !</p>
+<div class="section" id="install-the-hardware">
+<h3>Install the Hardware<a class="headerlink" href="#install-the-hardware" title="Permalink to this headline">¶</a></h3>
+<p>Goals:</p>
+<ul class="simple">
+<li><p>Create the SCAbox block design from an empty new vivado project.</p></li>
+<li><p>Generate the hardware specification file and bitstream.</p></li>
+</ul>
+<div class="section" id="create-a-new-rtl-project">
+<h4>1. Create a new RTL project<a class="headerlink" href="#create-a-new-rtl-project" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Launch Vivado</p></li>
+<li><p>Click on <strong>File &gt; Project &gt; New</strong></p></li>
+<li><p>Select <strong>project name</strong> (e.g <strong>“SCAbox”</strong>) and <strong>location</strong></p></li>
+<li><p>Choose <strong>RTL project</strong></p></li>
+<li><p>Do not add any <strong>sources/constraints</strong></p></li>
+<li><p>Select the <strong>part/board</strong> you are using (you can follow <a class="reference external" href="https://reference.digilentinc.com/reference/software/vivado/board-files">this</a> digilent tutorial if your board reference does not appear)</p></li>
+<li><p>Create the project</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/summary_project.png"><img alt="IP repo" class="align-center" src="../_images/summary_project.png" style="width: 640px;" /></a>
+</div>
+<div class="section" id="add-the-ip-repository-to-the-project">
+<h4>2. Add the IP repository to the project<a class="headerlink" href="#add-the-ip-repository-to-the-project" title="Permalink to this headline">¶</a></h4>
+<p>Here we will add the IP repository to the project. The IP repo has been downloaded at the beginning of this tutorial.</p>
+<ol class="arabic simple">
+<li><p>Click on <strong>Flow Navigator &gt; Project Manager &gt; IP Catalog</strong></p></li>
+<li><p>Right click on <strong>Vivado Repository</strong> and select <strong>Add Repository</strong></p></li>
+<li><p>Select the <strong>your_path/sca-ip/ip_repo</strong> folder</p></li>
+</ol>
+<p>Once it is done the added IPs appear in the repository list:</p>
+<a class="reference internal image-reference" href="../_images/ip_repo.png"><img alt="IP repo" class="align-center" src="../_images/ip_repo.png" style="width: 640px;" /></a>
+</div>
+<div class="section" id="create-the-block-design">
+<h4>3. Create the block design<a class="headerlink" href="#create-the-block-design" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Click on <strong>Flow Navigator &gt; IP integrator &gt; Create Block Design</strong></p></li>
+<li><p>Call it “<strong>SCAbox</strong>” and press <strong>OK</strong></p></li>
+</ol>
+<p>Now IPs can be added to the design</p>
+<ol class="arabic simple" start="3">
+<li><p>Press the <strong>+</strong> button and search for <strong>ZYNQ7 Processing System</strong>. double click to add it.</p></li>
+<li><p>Press the <strong>+</strong> button and search for <strong>FIFO Controller and FIFO</strong>. double click to add it.</p></li>
+<li><p>Press the <strong>+</strong> button and search for <strong>Time to Digital Converter (TDC)</strong>. double click to add it.</p></li>
+<li><p>Press the <strong>+</strong> button and search for <strong>Basic Advanced Encryption Standard (AES)</strong>. double click to add it.</p></li>
+</ol>
+<p>You should see the following IPs in your block design:</p>
+<a class="reference internal image-reference" href="../_images/ip_block_design.png"><img alt="IP block design" class="align-center" src="../_images/ip_block_design.png" style="width: 640px;" /></a>
+</div>
+<div class="section" id="connect-the-ip-cores">
+<h4>4. Connect the IP cores<a class="headerlink" href="#connect-the-ip-cores" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Select <strong>Run Block Automation</strong> in the designer assistance (green message in the diagram view). Make sure <strong>apply board preset</strong> is checked and press ok</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/block_automation.png"><img alt="IP block design" class="align-center" src="../_images/block_automation.png" style="width: 640px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Double click on the <strong>ZYNQ7 processing system</strong> block and select <strong>Clock Configuration</strong></p></li>
+<li><p>In the PL Fabric clock arborescence check <strong>FCLK_CLK0</strong> and set its frequency to <strong>50MHz</strong> (AXI clock), check <strong>FCLK_CLK1</strong> and set its frequency to <strong>200MHz</strong> (sensor clock), check <strong>FCLK_CLK2</strong> and set its frequency to <strong>10MHz</strong> (target clock).</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/zynq_clock.png"><img alt="IP block design" class="align-center" src="../_images/zynq_clock.png" style="width: 640px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Still in the <strong>ZYNQ7 processing system</strong> block, select <strong>PS-PL Configuration</strong></p></li>
+<li><p>Set <strong>UART baud rate</strong> to <strong>921600</strong> and press <strong>Ok</strong> to save the configuration</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/baudrate.png"><img alt="IP block design" class="align-center" src="../_images/baudrate.png" style="width: 640px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Connect each clock signal according to the screenshot below.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/connect_clock.png"><img alt="IP block design" class="align-center" src="../_images/connect_clock.png" style="width: 640px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Double click on the <strong>Time to Digital Converter IP</strong> block and set <strong>Depth</strong> to 8 (resolution), <strong>Count</strong> to 8 (number of sensor), <strong>Width</strong> to 32 (data width for storage).</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/tdc_param.png"><img alt="IP block design" class="align-center" src="../_images/tdc_param.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>connect <strong>TDC data_o[31:0]</strong> to FIFO <strong>data_i[31:0]</strong></p></li>
+<li><p>connect <strong>AES start_o</strong> to FIFO <strong>start_i</strong></p></li>
+<li><p>connect <strong>AES done_o</strong> to FIFO <strong>done_i</strong></p></li>
+</ol>
+<p>At this point, the design should look like this</p>
+<a class="reference internal image-reference" href="../_images/connected_design.png"><img alt="IP block design" class="align-center" src="../_images/connected_design.png" style="width: 640px;" /></a>
+<ol class="arabic simple" start="9">
+<li><p>Select <strong>Run Connection Automation</strong> in the designer assistance (green message in the diagram view). Check <strong>All Automation</strong> and press <strong>OK</strong></p></li>
+</ol>
+<p>Vivado automatically adds interconnect and reset AXI blocks. The design is ready.</p>
+<ol class="arabic simple" start="10">
+<li><p>Save the design by pressing <strong>ctrl+S</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/connected_axi_design.png"><img alt="IP block design" class="align-center" src="../_images/connected_axi_design.png" style="width: 640px;" /></a>
+</div>
+</div>
+<div class="section" id="generate-the-hardware">
+<h3>Generate the hardware<a class="headerlink" href="#generate-the-hardware" title="Permalink to this headline">¶</a></h3>
+<p>At this point, few steps are required to have a working bitstream.</p>
+<div class="section" id="generate-a-hdl-wrapper">
+<h4>1. Generate a HDL wrapper<a class="headerlink" href="#generate-a-hdl-wrapper" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Go into the <strong>Sources</strong> tab</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/source_tab.png"><img alt="IP block design" class="align-center" src="../_images/source_tab.png" style="width: 300px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Right click on <strong>SCAbox</strong> under <strong>Design Sources</strong></p></li>
+<li><p>Select Create a HDL wrapper</p></li>
+<li><p>Let Vivado manage the wrapper</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/wrapper.png"><img alt="IP block design" class="align-center" src="../_images/wrapper.png" style="width: 300px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Click on <strong>Flow Navigator &gt; IP Integrator &gt; Generate Block Design</strong></p></li>
+<li><p>Click on <strong>Generate</strong> to generate the wrapper</p></li>
+</ol>
+</div>
+<div class="section" id="configure-manual-sensors-placement">
+<h4>2. Configure manual sensors placement<a class="headerlink" href="#configure-manual-sensors-placement" title="Permalink to this headline">¶</a></h4>
+<dl class="simple">
+<dt>note</dt><dd><p>We manually set the TDC sensor placement within the FPGA in order to obtain better side-channel results during the acquisition phase.</p>
+</dd>
+</dl>
+<ol class="arabic simple">
+<li><p>Go into the <strong>Design Runs</strong> tab</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/design_run.png"><img alt="IP block design" class="align-center" src="../_images/design_run.png" style="width: 640px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Right click on <strong>impl_1</strong> and select <strong>Change Run Settings</strong></p></li>
+<li><p>Go to the <strong>Place Design</strong> section in the list</p></li>
+<li><p>Change the <strong>tcl.pre</strong> property by clicking the browse button</p></li>
+<li><p>Select new script and browse for the file <strong>your_path/sca-demo-tdc-aes/tcl/place.tcl</strong></p></li>
+<li><p>Avoid copying sources into the project and click <strong>Ok</strong></p></li>
+</ol>
+</div>
+<div class="section" id="generate-bitstream-and-specification">
+<h4>3. Generate bitstream and specification<a class="headerlink" href="#generate-bitstream-and-specification" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Click on <strong>Flow Navigator &gt; Program and Debug &gt; Generate Bitstream</strong></p></li>
+<li><p>Wait for the synthesis, implementation and bitstream writing to finish</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/bitstream.png"><img alt="bitstream success" class="align-center" src="../_images/bitstream.png" style="width: 300px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Click on <strong>File &gt; Export &gt; Export Hardware</strong></p></li>
+<li><p>Select <strong>Fixed</strong></p></li>
+<li><p>Select <strong>Include bitstream</strong> and click <strong>Ok</strong></p></li>
+</ol>
+<p>At this point Vivado must have created a .xsa file at the location you gave.
+This file will later be used by Vitis to generate a platform project that will handle
+all our hardware and drivers for the design we created.</p>
+<a class="reference internal image-reference" href="../_images/xsa.png"><img alt="export hw" class="align-center" src="../_images/xsa.png" style="width: 600px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using Xilinx SDK instead of Vitis, you do not have a .xsa file but a .hdf file (hardware definition).</p>
+</div>
+</div>
+</div>
+<div class="section" id="install-the-software">
+<h3>Install the Software<a class="headerlink" href="#install-the-software" title="Permalink to this headline">¶</a></h3>
+<p>If you completed the previous steps or if you are already provided with a BSP or a hardware specification
+you are now able to bind the hardware with the demo project.</p>
+<div class="section" id="create-a-new-system-project">
+<h4>1. Create a new system project<a class="headerlink" href="#create-a-new-system-project" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Launch Vitis</p></li>
+<li><p>Select your project path for the workspace</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/vitis_workspace.png"><img alt="export hw" class="align-center" src="../_images/vitis_workspace.png" style="width: 450px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Quit the <strong>Welcome</strong> view</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/vitis_base.png"><img alt="export hw" class="align-center" src="../_images/vitis_base.png" style="width: 640px;" /></a>
+</div>
+<div class="section" id="create-a-new-platform-project">
+<h4>2. Create a new platform project<a class="headerlink" href="#create-a-new-platform-project" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Click on <strong>File &gt; New &gt; Platform Project</strong></p></li>
+<li><p>Name your platform <strong>SCAbox</strong> and select <strong>Next</strong></p></li>
+<li><p>Browse for your .xsa file</p></li>
+<li><p>Click on Finish to create the platform</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/vitis_xsa.png"><img alt="export hw" class="align-center" src="../_images/vitis_xsa.png" style="width: 640px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Xilinx SDK just launch SDK from Vivado with the hardware project open and the platform project will be created.</p>
+</div>
+</div>
+<div class="section" id="create-a-new-application-project">
+<h4>3. Create a new application project<a class="headerlink" href="#create-a-new-application-project" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Click on <strong>File &gt; New &gt; Application Project</strong></p></li>
+<li><p>Select the previously added platform, select <strong>Next</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/new_proj_xsa.png"><img alt="new proj xsa" class="align-center" src="../_images/new_proj_xsa.png" style="width: 450px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Name the project and let default values for other parameters. Then select <strong>Next</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/new_proj_name.png"><img alt="new proj xsa" class="align-center" src="../_images/new_proj_name.png" style="width: 450px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>Ensure the standalone domain is selected, then select <strong>Next</strong></p></li>
+<li><p>Select the <strong>Empty Application</strong> template, then select <strong>Finish</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/vitis_proj_view.png"><img alt="new proj xsa" class="align-center" src="../_images/vitis_proj_view.png" style="width: 640px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Right click on the application project in the <strong>Explorer</strong></p></li>
+<li><p>Click on <strong>Import Sources</strong></p></li>
+<li><p>Add the .c and .h files from <strong>your_path/sca-demo-tdc-aes/src</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/vitis_add_src.png"><img alt="new proj xsa" class="align-center" src="../_images/vitis_add_src.png" style="width: 450px;" /></a>
+<ol class="arabic simple" start="9">
+<li><p>Add the module folder from <strong>your_path/sca-demo-tdc-aes/modules</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/vitis_module.png"><img alt="new proj xsa" class="align-center" src="../_images/vitis_module.png" style="width: 450px;" /></a>
+</div>
+<div class="section" id="add-includes-to-the-project">
+<h4>4. Add includes to the project<a class="headerlink" href="#add-includes-to-the-project" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Right click on the application project previously created in the <strong>Explorer</strong></p></li>
+<li><p>Select <strong>C/C++ Build Settings</strong></p></li>
+<li><p>In the <strong>Settings</strong> tab go to <strong>ARM v7 gcc compiler &gt; Directories</strong></p></li>
+<li><p>Add each directory in the <strong>src</strong> folder as <strong>Include Paths</strong></p></li>
+</ol>
+<p>If you correctly imported the includes you must have the following configuration :</p>
+<a class="reference internal image-reference" href="../_images/vitis_includes.png"><img alt="Application includes" class="align-center" src="../_images/vitis_includes.png" style="width: 640px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Select <strong>Apply and Close</strong></p></li>
+</ol>
+</div>
+<div class="section" id="exclude-main-files-from-build">
+<h4>5. Exclude main files from build<a class="headerlink" href="#exclude-main-files-from-build" title="Permalink to this headline">¶</a></h4>
+<p>The project modules contain main files that need to be excluded from build to avoid multiple main declaration error.</p>
+<ol class="arabic simple">
+<li><p>Right click on the <strong>SCAboxApp/AES/main.c</strong> source in the arborescence and select <strong>properties</strong>.</p></li>
+<li><p>In the <strong>properties</strong> window check <strong>Exclude resource from build</strong> and select <strong>Apply and Close</strong></p></li>
+<li><p>Right click on the <strong>SCAboxApp/cmd/main.c</strong> source in the arborescence and select <strong>properties</strong>.</p></li>
+<li><p>In the <strong>properties</strong> window check <strong>Exclude resource from build</strong> and select <strong>Apply and Close</strong></p></li>
+<li><p>Right click on the <strong>SCAboxApp/tiny-AES-c/test.c</strong> source in the arborescence and select <strong>properties</strong>.</p></li>
+<li><p>In the <strong>properties</strong> window check <strong>Exclude resource from build</strong> and select <strong>Apply and Close</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/excludebuild.png"><img alt="Application includes" class="align-center" src="../_images/excludebuild.png" style="width: 500px;" /></a>
+</div>
+<div class="section" id="generate-a-linker-script">
+<h4>6. Generate a linker script<a class="headerlink" href="#generate-a-linker-script" title="Permalink to this headline">¶</a></h4>
+<p>It is likely that the default linker script will set the heap and stack size to smaller values than what is needed for the demo.</p>
+<ol class="arabic simple">
+<li><p>Right click on the application project previously created on the <strong>Explorer</strong></p></li>
+<li><p>Select <strong>Generate linker script</strong></p></li>
+<li><p>Modify the <strong>Heap Size</strong> to 32KB</p></li>
+<li><p>Modify the <strong>Stack Size</strong> to 32KB</p></li>
+<li><p>Select <strong>Generate</strong> and overwrite the previous file</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These values are arbitrary and might not be optimal be guarantee that the demo do not overflows.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/linker.png"><img alt="Application includes" class="align-center" src="../_images/linker.png" style="width: 500px;" /></a>
+</div>
+</div>
+<div class="section" id="launch-the-application">
+<h3>Launch the application<a class="headerlink" href="#launch-the-application" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="build-the-project">
+<h4>1. Build the project<a class="headerlink" href="#build-the-project" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Select <strong>Project</strong> and press <strong>Build All</strong></p></li>
+</ol>
+<p>If no error occurs the project is ready to be downloaded into the Zynq board.</p>
+</div>
+<div class="section" id="launch-uart-communication">
+<h4>2. Launch UART communication<a class="headerlink" href="#launch-uart-communication" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Plug your board and turn it ON</p></li>
+<li><p>Ensure the mode register is set to JTAG (JP5 on Zybo)</p></li>
+<li><p>Launch your terminal emulator</p></li>
+<li><p>Configure a serial connection as shown above</p></li>
+<li><p>Start a session with the emulator</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/serial.png"><img alt="Application output" class="align-center" src="../_images/serial.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>Ensure local echo is on for the session.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/localecho.png"><img alt="Application output" class="align-center" src="../_images/localecho.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="run-the-application">
+<h4>3. Run the application<a class="headerlink" href="#run-the-application" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>Right click on the application project</p></li>
+<li><p>Click on <strong>Run As &gt; Launch on Hardware</strong></p></li>
+<li><p>Switch to the terminal session</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/serial_welcome.png"><img alt="Application output" class="align-center" src="../_images/serial_welcome.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Into the terminal type the command <code class="docutils literal notranslate"><span class="pre">tdc</span></code></p></li>
+<li><p>Press Enter</p></li>
+</ol>
+<p>If everything went well, you should see an output similar to the following obtained with picocom :</p>
+<a class="reference internal image-reference" href="../_images/tdc.png"><img alt="Application output" class="align-center" src="../_images/tdc.png" style="width: 400px;" /></a>
+<p>The value displayed by the command is the current sensors value.
+The last displayed line must be the one below, indicating that the SoC is ready to receive commands.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial you learned how to generate and build a the SCAbox framework. Through this tutorial, you built an equivalent application to the one presented in <a class="reference external" href="test.html">Tuto #1</a>. You can use it to reproduce the CPA attack presented in <a class="reference external" href="test.html">Tuto #1</a>.</p>
+<p>The major difference with <a class="reference external" href="test.html">Tuto #1</a> is that you now have a fully built version of the framework that you can customize to your liking.</p>
+<p>In the next tutorial <a class="reference external" href="acquisition.html">Tuto #3</a>, you will learn how to use the serial commands available from the serial prompt.</p>
+<p>You can try to customize the IPs already present by right-clicking on it and select <strong>Customize IP</strong>. You can also change the IPs already present with different ones. To do this follow the <a class="reference external" href="acquisition.html">Tuto #3</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="acquisition.html" class="btn btn-neutral float-right" title="#3 - Use SCAbox" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="test.html" class="btn btn-neutral float-left" title="#1 - Run the Pre-Built Demo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Anonymous.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Acquisition &mdash; SCAbox 1.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Targets" href="targets.html" />
+    <link rel="prev" title="Attack" href="attack.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCAbox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tuto/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tuto/home.html#tutorials">Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="home.html#contents">Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="attack.html">Attack</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Acquisition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#triggering">Triggering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-transfer">Data transfer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-location">Sensor location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-sizing">Sensor sizing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#noise-to-signal">Noise to signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#our-setup">Our Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="targets.html">Targets</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCAbox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="home.html">Home</a> &raquo;</li>
+        
+      <li>Acquisition</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/wiki/acquisition.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="acquisition">
+<h1>Acquisition<a class="headerlink" href="#acquisition" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The side-channel acquisition consists on transferring the data between the remote sensors and the attacker CPU.
+The acquisition is perform on the remote SoC, but the attack can be anywhere the leakage can be communication :</p>
+<ul class="simple">
+<li><p>Via any bus or serial connection</p></li>
+<li><p>Via network</p></li>
+<li><p>Directly inside CPU</p></li>
+</ul>
+<p>Ideally, the remote sensors are sampled at the similar instants during each victim’s encryption run.
+To perform an attack the data of the sensors must be acquired during different victim’s encryption run.
+We call this process <em>iterating</em> acquisition. Each run is an <em>iteration</em> providing a <em>trace</em> representing the power leakage.</p>
+</div>
+<div class="section" id="triggering">
+<h2>Triggering<a class="headerlink" href="#triggering" title="Permalink to this headline">¶</a></h2>
+<p>The triggering consist on launching the sensor acquisition at the right instants to capture crypto-algorithm runs.
+The triggering must be done at the same instants during each iteration in order to latter perform consistent correlation between iterations.</p>
+</div>
+<div class="section" id="data-transfer">
+<h2>Data transfer<a class="headerlink" href="#data-transfer" title="Permalink to this headline">¶</a></h2>
+<p>The data transfer consist on sending the sampled from the sensors from the fabric to the attacker CPU.
+The attacker CPU is not necessarily located on the SoC of the fabric.
+Indeed, performing the CPA is a computationally expensive task regarding the count traces required,
+whereas CPU ressources on the SoC are often limited.</p>
+<p>Thus, the data transfert must be performed from the fabric to a more powerful CPU passing thought the CPU available on the SoC.</p>
+</div>
+<div class="section" id="sensor-location">
+<h2>Sensor location<a class="headerlink" href="#sensor-location" title="Permalink to this headline">¶</a></h2>
+<p>It is observed that the sensors capture better traces when located near the target device.</p>
+</div>
+<div class="section" id="sensor-sizing">
+<h2>Sensor sizing<a class="headerlink" href="#sensor-sizing" title="Permalink to this headline">¶</a></h2>
+<p>It is observed that the sensors capture better traces when they are more present.</p>
+</div>
+<div class="section" id="noise-to-signal">
+<h2>Noise to signal<a class="headerlink" href="#noise-to-signal" title="Permalink to this headline">¶</a></h2>
+<p>The side-channel acquisition is not subject to usual signal constraints that characterize a correct acquisition</p>
+<ul class="simple">
+<li><p>No need for the sampling frequency to be twice the Shannon frequency</p></li>
+<li><p>No need for constant sampling frequency</p></li>
+</ul>
+<p>However the noise to signal ratio can be high when the sensor sizing or location cannot be optimal.
+Futhermore, due to the presence of the CPU, the PDN gets noised by non-targeted activity even in an optimal configuration.
+Thus, signal filtering is key in the attack process. It must ideally be adapted to the physical state and structure of the SoC.</p>
+<p>Regarding this matter, two approaches have been considered :</p>
+<ul class="simple">
+<li><p>Spectrum analysis from experiments</p></li>
+<li><p>Noise deconvolution</p></li>
+</ul>
+</div>
+<div class="section" id="our-setup">
+<h2>Our Setup<a class="headerlink" href="#our-setup" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="targets.html" class="btn btn-neutral float-right" title="Targets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="attack.html" class="btn btn-neutral float-left" title="Attack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Anonymous.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

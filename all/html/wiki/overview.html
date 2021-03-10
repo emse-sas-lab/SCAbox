@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Overview &mdash; SCAbox 1.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Attack" href="attack.html" />
+    <link rel="prev" title="Home" href="home.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCAbox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tuto/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tuto/home.html#tutorials">Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="home.html#contents">Contents</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#context">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#issues">Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#goals">Goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#project">Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#related-papers">Related papers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#side-channel-attacks">Side channel attacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fpga-based-sensors">FPGA based sensors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remote-fpga">Remote FPGA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="attack.html">Attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acquisition.html">Acquisition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="targets.html">Targets</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCAbox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="home.html">Home</a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/wiki/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="overview">
+<span id="wiki-overview"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="context">
+<h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
+<p>FPGA devices first seen as circuit prototyping devices, are becoming increasingly popular.
+This is due three main factors : the growing capabilities of these devices,
+the increase of the demand in embedded devices and hardware accelerators and lastly the end of Moore’s law.</p>
+<p>Today, in order to improve computational performances, servers can embed FPGA based <em>hardware accelerators</em>.
+These are often cryptographic accelerators used for secure communication, providing a better response time to the server.
+Futhermore, is now common for users of a server to <em>remotely</em> implement their own FPGA accelerator into the fabric.</p>
+<a class="reference internal image-reference" href="../_images/sca_servers_fpga.png"><img alt="SCA Server's FPGA" class="align-center" src="../_images/sca_servers_fpga.png" style="width: 400px;" /></a>
+<p>As it is a common practice to share a server among multiple users,
+shared FPGA fabric have been recently discussed by data-centers in order to allow the rental of <strong>multiple parts of a single FPGA fabric</strong>.
+The users will remotely implement their accelerator into their allocated space in the fabric.</p>
+<p>Remote FPGA allows to <strong>more users</strong> to benefit from acceleration features and
+to the data-center to make a <strong>more profitable</strong> use of the fabric by increasing the used space in the fabric.</p>
+</div>
+<div class="section" id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h2>
+<p>Recent academic work shows that <em>hardware security</em> issues came with shared FPGA.</p>
+<p>One of these is the logical separation, sharing a single FPGA fabric potentially allows to users to logically connect to each other.
+This issue can be addressed by forbidding at implementation the logical connection between different users, this method is called <em>logical isolation</em>.</p>
+<p>Although logical isolation is easy to performed, the fabric is still connected to the same <em>Power Delivery Network</em> (PDN).
+Thus, the instantaneous power in the fabric contain information about what’s happening in each user’s space.</p>
+<a class="reference internal image-reference" href="../_images/sca_pdn.png"><img alt="SCA Server's PDN" class="align-center" src="../_images/sca_pdn.png" style="width: 500px;" /></a>
+<p>One that can have access to this <em>power leakage</em> can potentially use this data for a malicious usage.
+With the emergence of FPGA based power sensors, it is even possible to <strong>remotely capture the leakage</strong> for malicious purposes.</p>
+</div>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<p>Regarding the above issue, we are interested in performing <em>remote side-channel attacks</em>.
+While the <em>victim</em> performs encrypted communication on the server, the <em>attacker</em> remotely use power sensors.
+The leakage given by the sensor will then be processed in order to perform a <em>Correlation Power Analysis</em> (CPA).
+We will finally attempt to <strong>retrieve the original encryption key</strong> used by performing a guess from the correlation data.</p>
+</div>
+<div class="section" id="project">
+<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
+<p>The SCABox project aims at providing tools to learn how remote side-channel attacks works and to evaluate the different attack configuration.
+The project consist on a test-bench that provide various levels of customization, from options configuration, software changes to custom IP integration.
+The project is designed to stimulate the emergence of new attack and defense technology by customizing the available framework.</p>
+</div>
+<div class="section" id="related-papers">
+<h2>Related papers<a class="headerlink" href="#related-papers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="side-channel-attacks">
+<h3>Side channel attacks<a class="headerlink" href="#side-channel-attacks" title="Permalink to this headline">¶</a></h3>
+<p>The following research papers describes and experiment side channels attacks:
+- [link to the papers]</p>
+</div>
+<div class="section" id="fpga-based-sensors">
+<h3>FPGA based sensors<a class="headerlink" href="#fpga-based-sensors" title="Permalink to this headline">¶</a></h3>
+<p>The following research papers describes and experiment FPGA based sensors:
+- [link to the papers]</p>
+</div>
+<div class="section" id="remote-fpga">
+<h3>Remote FPGA<a class="headerlink" href="#remote-fpga" title="Permalink to this headline">¶</a></h3>
+<p>The following research papers describes and experiment the remote FPGA and collocation possibilities
+- [link to the papers]</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="attack.html" class="btn btn-neutral float-right" title="Attack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="home.html" class="btn btn-neutral float-left" title="Home" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Anonymous.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

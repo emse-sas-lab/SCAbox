@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Attack &mdash; SCAbox 1.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Acquisition" href="acquisition.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCAbox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tuto/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tuto/home.html#tutorials">Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="home.html#contents">Contents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Attack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fundamentals">Fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#victims">Victims</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assumptions">Assumptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#our-setup">Our Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#stages">Stages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#architecture">Architecture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="acquisition.html">Acquisition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="targets.html">Targets</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCAbox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="home.html">Home</a> &raquo;</li>
+        
+      <li>Attack</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/wiki/attack.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="attack">
+<h1>Attack<a class="headerlink" href="#attack" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fundamentals">
+<h2>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this headline">¶</a></h2>
+<p>We are interested in side-channel attacks based on the power consumption of an SoC.
+Most of these attacks consist on performing a set of common steps :</p>
+<ol class="arabic simple">
+<li><p><em>Acquire</em> the power leakage of crypto-algorithm running</p></li>
+<li><p><em>Model</em> the power leakage for various key <em>hypothesis</em></p></li>
+<li><p><em>Correlate</em> the <em>observed power leakage</em> with the <em>modeled power leakage</em></p></li>
+<li><p><em>Iterate</em> the previous steps until the correlation is significant</p></li>
+</ol>
+<p>A key hypothesis consist on fixing the value of several bit groups of the key, supposing that these are the correct.
+The power leakage is modeled for each key hypothesis. The correlation is computed for each power leakage model.</p>
+<p>More precisely, the attack is based on a key splitting into bytes or bit groups that can be attacked.
+It can be characterized as a <em>divide and conquer</em> key inference, we divide the key into multiples part easy to guess by correlation as shown in the figure <a class="reference internal" href="#sca-aes-guess"><span class="std std-ref">Key splitting for AES128 algorithm</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="sca-aes-guess"></span><a class="reference internal image-reference" href="../_images/sca_aes_guess.png"><img alt="AES Guess Key" src="../_images/sca_aes_guess.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Key splitting for AES128 algorithm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>For example with the AES128 algorithm, it leads to formulating <span class="math notranslate nohighlight">\(256 \cdot 16\)</span> key hypothesis.
+In contrast, an explicit brute force attack in the same conditions would require formulating <span class="math notranslate nohighlight">\(2^{128}\)</span> key hypothesis.</p>
+<p>It is not always possible to retrieve the hole key with a side-channel attack. Depending on the chosen leakage model, only several bits can be guessed correctly.</p>
+<p>After modeling power leakage for the hypothesis, we use the Correlation Power Analysis (CPA) to produce a guess for the key.
+The correlation is computed using Pearson’s coefficient defined by :</p>
+<div class="math notranslate nohighlight">
+\[\rho_{X, Y} = \dfrac{E[X-\mu_X] E[Y-\mu_Y]}{\sigma_X \sigma_Y}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(X\)</span> is the instantaneous observed power leakage random variable and <span class="math notranslate nohighlight">\(Y\)</span> the modeled power leakage.
+<span class="math notranslate nohighlight">\(\mu\)</span> denotes the sample mean, <span class="math notranslate nohighlight">\(\sigma\)</span> the sample standard deviation and <span class="math notranslate nohighlight">\(E\)</span> the expectation of a random variable.</p>
+<p>The Pearson’s coefficient’s value is in the interval <span class="math notranslate nohighlight">\([-1, 1]\)</span>.
+A negative correlation denotes a inverse linear dependency between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>.
+A positive correlation denotes a direct linear dependency and a correlation near zero indicates that the two variables are not linearly correlated.</p>
+<p>The correlation coefficient depends on time <span class="math notranslate nohighlight">\(\rho_{X, Y} = \rho_{X(t), Y}\)</span>.
+It is computed all along the leakage signals and will peak at a distinctive instant if a strong guess is made as shown in the figure <a class="reference internal" href="#sca-pearson"><span class="std std-ref">Example of a successful hardware AES128 attack</span></a>.</p>
+<div class="figure align-center" id="id2">
+<span id="sca-pearson"></span><a class="reference internal image-reference" href="../_images/sca_pearson.png"><img alt="Pearson coefficient" src="../_images/sca_pearson.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Example of a successful hardware AES128 attack</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>We consider that the correlation coefficient indicates how good our key hypothesis was.
+More precisely, we state that if the best absolute value of the coefficient is <span class="math notranslate nohighlight">\(N\)</span> times greater than the second best absolute correlation,
+the key has been guessed, <span class="math notranslate nohighlight">\(N\)</span> being arbitrary.
+Otherwise, we acquire more power leakage data in order to obtain a better correlation.</p>
+<p>The success condition can be express with the formula below :</p>
+<div class="math notranslate nohighlight">
+\[P^* &gt; N P^{**}\]</div>
+<p>Where we defined :</p>
+<div class="math notranslate nohighlight">
+\[P^* = \max{|\rho|}\]</div>
+</div>
+<div class="section" id="victims">
+<h2>Victims<a class="headerlink" href="#victims" title="Permalink to this headline">¶</a></h2>
+<p>The victims of such a side-channel attack are all the electronic devices that are not protected against power leakages.
+Since we are performing remote side-channel attacks using FPGA our victim we preferentially will be servers provided
+with an FPGA fabric that can be shared among multiple servers users.</p>
+<p>FPGA based remote-sensors are employed in the framework to eavesdrop the power leakage of
+a crypto-algorithm running in the SoC.</p>
+<p>Therefore, at least two types of targets are sensitive to our attack, the <em>CPU</em> and the <em>FPGA accelerators</em> as shown in the figure <a class="reference internal" href="#sca-victims"><span class="std std-ref">Potential victims of our attack</span></a>.</p>
+<div class="figure align-center" id="id3">
+<span id="sca-victims"></span><a class="reference internal image-reference" href="../_images/sca_victims.png"><img alt="SCA Victims" src="../_images/sca_victims.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Potential victims of our attack</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the first case, the power leakage of the CPU is leveraged. This leakage contains among a lot of noise due to the CPU activity,
+the information on the crypto-algorithms running.</p>
+<p>In the second case, the power leakage of the fabric is leveraged, This leakage is much more significant because the electrical activity
+is more intense than CPU’s one when crypto-algorithms are running.</p>
+</div>
+<div class="section" id="assumptions">
+<h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h2>
+<p>Side-channel attacks works only under several assumptions :</p>
+<ol class="loweralpha simple">
+<li><p>Attacker and victim share the same FPGA fabric</p></li>
+<li><p>Attacker and victim shares the same CPU</p></li>
+<li><p>The key remains the same during all the leakage acquisition</p></li>
+</ol>
+<p>Since we attempt to demonstrate the abilities of side-channel attacks, we will not consider the triggering issues.
+We will assume that the attacker is able to synchronously trigger leakage acquisition with the victim crypto-computations.</p>
+</div>
+<div class="section" id="our-setup">
+<h2>Our Setup<a class="headerlink" href="#our-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stages">
+<h3>Stages<a class="headerlink" href="#stages" title="Permalink to this headline">¶</a></h3>
+<p>In order to standardize the stages of a side-channel attack we defined a procedure called the <em>attack pipeline</em>.
+It consists on several steps that will allow to manually or programmatically reproduce this attack.
+The procedure works for all targets under the assumptions provided above :</p>
+<ol class="arabic simple">
+<li><p>Launch sensors acquisition and crypto-algorithm</p></li>
+<li><p>Wait until crypto-algorithm end</p></li>
+<li><p>Stop sensors acquisition</p></li>
+<li><p>Send data via serial port</p></li>
+<li><p>Correlate data</p></li>
+<li><p>Guess the key</p></li>
+</ol>
+<p>The pipeline steps are resumed in the figure <a class="reference internal" href="#sca-attack-pipeline"><span class="std std-ref">Overview of the attack steps</span></a>.</p>
+<div class="figure align-center" id="id4">
+<span id="sca-attack-pipeline"></span><a class="reference internal image-reference" href="../_images/sca_attack_pipeline.png"><img alt="SCA Steps" src="../_images/sca_attack_pipeline.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Overview of the attack steps</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="architecture">
+<h3>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h3>
+<p>In order to perform successfully the pipeline, we designed an hybrid bench architecture that simulates the remote side-channel attack setup.
+Our architecture is made to reproduce attacks and to be flexible, the goal being for users to customize the attack bench.
+We can split the bench into different parts located on the SoC :</p>
+<ul class="simple">
+<li><p>Acquisition control : handle sensors acquisition</p></li>
+<li><p>Sensors : capture power leakage</p></li>
+<li><p>Victim : perform cryptographic computation</p></li>
+</ul>
+<p>The figure <a class="reference internal" href="#sca-archi-overview"><span class="std std-ref">Overview of the bench architecture</span></a> detail how our architecture implement the attack pipeline.</p>
+<div class="figure align-center" id="id5">
+<span id="sca-archi-overview"></span><a class="reference internal image-reference" href="../_images/sca_archi_overview.png"><img alt="Architecture overview" src="../_images/sca_archi_overview.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Overview of the bench architecture</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The acquisition controller is shared so the leakage is captured synchronously with the crypto-algorithm run.
+This allows to have consistent data among the iterations.</p>
+<p>The cores are considered shared even if they can be completely owned by the attacker or the victim.
+In our most simple configuration, one core is used both as a victim, performing crypto-computation, and as an attacker, communicating leakage and encryption data.
+More sophisticated configurations separates attacker and victim cores in order to produce a more realistic leakage.</p>
+<p>Lastly, the key validation part allows to verify if the attack guess was correct by comparing the original key with the guessed one, which can be performed only
+if the attacker is provided with the correct key in advance.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="acquisition.html" class="btn btn-neutral float-right" title="Acquisition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Anonymous.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

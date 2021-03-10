@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>#1 - Run the Pre-Built Demo &mdash; SCAbox 1.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="#2 - Install SCAbox" href="installation.html" />
+    <link rel="prev" title="#0 - Download SCAbox" href="download.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SCAbox
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="home.html#tutorials">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="download.html">#0 - Download SCAbox</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">#1 - Run the Pre-Built Demo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#goals">Goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emulator-setup">Emulator setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorial">Tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load-the-boot-image-inside-the-sd-card">1. Load the boot image inside the SD card</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#launch-the-demo">2. Launch the Demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#collect-the-aes-leakage">3. Collect the AES Leakage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">#2 - Install SCAbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acquisition.html">#3 - Use SCAbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create.html">#4 - Build your Own Designs</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/home.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/home.html#contents">Contents</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SCAbox</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="home.html">Home</a> &raquo;</li>
+        
+      <li>#1 - Run the Pre-Built Demo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/tuto/test.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-the-pre-built-demo">
+<h1>#1 - Run the Pre-Built Demo<a class="headerlink" href="#run-the-pre-built-demo" title="Permalink to this headline">¶</a></h1>
+<p><strong>Duration:</strong> 20-30 min</p>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial you will conduct your first FPGA-based side-channel attack in three steps:</p>
+<ol class="arabic simple">
+<li><p>Download the Application Image</p></li>
+<li><p>Launch the Demo</p></li>
+<li><p>Collect the AES Leakage</p></li>
+</ol>
+<p><strong>Summary:</strong> This tutorial do not require any software tool installation or programming. It uses a pre-built boot image available on github that can be loaded into a micro SD card to launch the demo. The image contains an FPGA bitstream that embeds time-to-digital converter sensors (TDC) and a hardware AES. It also contains a software program that we will serve as an interface to communicate with your computer through serial port. At the end of this tutorial you will conduct a correlation power analysis attack using the AES leakage collected using TDCs.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A Zynq board</p></li>
+<li><p>A micro SD card</p></li>
+<li><p>A micro USB cable</p></li>
+<li><p>Any terminal emulator such as PuTTY, TeraTerm or picocom</p></li>
+<li><p>Python version <span class="math notranslate nohighlight">\(\geq\)</span> 3.8</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because it uses pre-built images, this tutorial is board dependent.
+Currently, two boards are supported: Digilent Zybo z7-10 and Digilent Zybo z7.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/zybo_setup.jpg"><img alt="Zybo setup" class="align-center" src="../_images/zybo_setup.jpg" style="width: 400px;" /></a>
+</div>
+<div class="section" id="emulator-setup">
+<h2>Emulator setup<a class="headerlink" href="#emulator-setup" title="Permalink to this headline">¶</a></h2>
+<p>The terminal emulator allows to communicate via UART with the SoC.
+It must be configured properly in order to work and allow command typing.
+Bellow is given the emulator configuration used :</p>
+<ul class="simple">
+<li><p>port is        : /dev/ttyUSBx</p></li>
+<li><p>flowcontrol    : none</p></li>
+<li><p>baudrate is    : 921600</p></li>
+<li><p>parity is      : none</p></li>
+<li><p>databits are   : 8</p></li>
+<li><p>stopbits are   : 1</p></li>
+<li><p>local echo is  : yes</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If your terminal provide it, you can also use the local line edit.</p></li>
+<li><p>Port name can vary according to your OS, eg. on windows its COMx</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+<p>The tutorial starts here</p>
+<div class="section" id="load-the-boot-image-inside-the-sd-card">
+<h3>1. Load the boot image inside the SD card<a class="headerlink" href="#load-the-boot-image-inside-the-sd-card" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Insert</strong> the SD card into your computer</p></li>
+<li><p><strong>Format</strong> the SD card.</p></li>
+<li><p><strong>Copy</strong> the BOOT.bin image that matches your board reference</p></li>
+<li><p><strong>Eject</strong> the SD card</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The folder containing the images is located in <strong>your_path/SCAbox/sca_demo_tdc_aes/image</strong></p>
+</div>
+</div>
+<div class="section" id="launch-the-demo">
+<h3>2. Launch the Demo<a class="headerlink" href="#launch-the-demo" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Insert the SD card into the Zybo board card slot.</p></li>
+<li><p>Place the jumper 5 in <strong>SD</strong> boot position</p></li>
+<li><p>Connect the Zybo to your computer using the <strong>micro USB cable</strong></p></li>
+<li><p>Power on the Zybo and wait for the green led “<strong>DONE</strong>” to illuminate.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the “DONE” led is off, press the “PS-SRST” button. If it remains off the image is probably not compatible with your board, or the SD card is not supported. Please check the requirement section at the beginning of this tutorial.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/zybo_programmed.jpg"><img alt="Zybo programmed" class="align-center" src="../_images/zybo_programmed.jpg" style="width: 400px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Start the serial communication with the parameters given in the <strong>Emulator setup</strong> section at the beginning of this tutorial</p></li>
+<li><p>Press the “PS-SRST” button, the following welcome message should appear</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/SCA_Putty1.png"><img alt="FIFO output simple" class="align-center" src="../_images/SCA_Putty1.png" style="width: 400px;" /></a>
+<p>You can now use the available serial commands to perform AES encryptions, side-channel acquisitions, etc. If you want to learn more about available commands please follow the <a class="reference external" href="acquisition.html">Tuto #3</a>.</p>
+</div>
+<div class="section" id="collect-the-aes-leakage">
+<h3>3. Collect the AES Leakage<a class="headerlink" href="#collect-the-aes-leakage" title="Permalink to this headline">¶</a></h3>
+<p>To facilitate the data acquisition and visualisation SCAbox comes with a simple application built in python. This application connects directly to the Zynq board through a serial communication and can exchange data and commands with the device.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The project is compatible with Python 3.8 and latter. It is platform independent.</p>
+</div>
+<ol class="arabic simple">
+<li><p>To install the automation tool you must clone the sources from GitHub and install the pip requirements:</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/emse-sas/sca-automation
+$ <span class="nb">cd</span> sca-automation
+$ pip3 install -r requirements.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Then launch the <strong>main.py</strong> python file with your board serial port as an argument.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> sca-automation/app
+$ sudo python3 main.py -t /dev/ttyUSB1
+</pre></div>
+</div>
+<p>The following view should appear:</p>
+<a class="reference internal image-reference" href="../_images/SCA_Automation1.png"><img alt="FIFO output simple" class="align-center" src="../_images/SCA_Automation1.png" style="width: 800px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>Select the following parameters</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Iteration</strong>: 500</p></li>
+<li><p><strong>Chunk</strong>: 20</p></li>
+<li><p><strong>Mode</strong>: HW</p></li>
+<li><p><strong>Model</strong>: Inv Sbox R10</p></li>
+</ul>
+<p>This will launch 500*20 = 10000 AES acquisitions and compute CPA on the last round.</p>
+<ol class="arabic simple" start="4">
+<li><p>Press <strong>Launch</strong></p></li>
+</ol>
+<p>The AES leakage can be easily recognized thanks to its ten characteristic rounds that create high power consumption spikes. The magnitude spectrum
+plotted in the bottom indicates the leakage amplitude at each frequency.</p>
+<a class="reference internal image-reference" href="../_images/SCA_Leakage1.png"><img alt="AES Leakage results" class="align-center" src="../_images/SCA_Leakage1.png" style="width: 800px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>Select <strong>Correlation</strong></p></li>
+</ol>
+<p>Two plots illustrate the CPA attack results for a specific key byte (here byte 1). On the top, we can see the correct key candidate (in red) emerging from the other candidates (in gray) after less than 100 acquisitions. On the bottom the temporal representation indicates that the key leaks around the sample 300. The actual implementation of the LastRound CPA works only on the 4 first bytes of the AES.</p>
+<a class="reference internal image-reference" href="../_images/SCA_Results1.png"><img alt="CPA results" class="align-center" src="../_images/SCA_Results1.png" style="width: 800px;" /></a>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>You did it ! It was your first FPGA-based side-channel attack experience on SCAbox. Now you may be interested in creating your own designs. That’s the topic addressed in the following tutorials.</p>
+<p>Click <strong>Next</strong> to start the <a class="reference external" href="installation.html">Tuto#2</a>: Install the Framework.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="installation.html" class="btn btn-neutral float-right" title="#2 - Install SCAbox" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="download.html" class="btn btn-neutral float-left" title="#0 - Download SCAbox" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Anonymous.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
