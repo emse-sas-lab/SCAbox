@@ -1,14 +1,8 @@
 language: python
 python:
 - 3.8
-
 install:
 - pip install sphinx sphinx_rtd_theme sphinx-argparse recommonmark sphinxext-remoteliteralinclude
-
-
-before_install:
-- openssl aes-256-cbc -K $encrypted_0a8b5c952d03_key -iv $encrypted_0a8b5c952d03_iv -in deploy_scabox.enc -out deploy_scabox -d
-
 scripts:
 - echo "Generating documentation..."
 - cd docs/sources
@@ -16,7 +10,6 @@ scripts:
 - cd ../build/all/html
 - touch .nojekyll
 - cd ../../../../
-
 deploy:
   provider: pages:git
   deploy_key: deploy_scabox
@@ -25,3 +18,6 @@ deploy:
   edge: true
   on:
     branch: deployement
+before_install:
+- openssl aes-256-cbc -K $encrypted_0a8b5c952d03_key -iv $encrypted_0a8b5c952d03_iv
+  -in deploy_scabox.enc -out deploy_scabox -d

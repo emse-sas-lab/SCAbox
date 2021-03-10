@@ -2,8 +2,9 @@ docs/build
 .vscode
 .metadata
 .Xil
-deploy_sca
-deploy_sca.pub
+deploy_scabox
+deploy_scabox.pub
+/bin/bash: wq: command not found
 docs/sources/tuto_windows.txt
 build/
 *.DS_Store
