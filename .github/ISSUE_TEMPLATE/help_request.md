@@ -7,7 +7,7 @@ labels: 'help wanted'
 ---
 
 **Brief**
-A brief description of what the topic.
+A short description of what the topic.
 
 **Target Code**
 ```
@@ -21,4 +21,4 @@ Main questions to be asked.
 Additional comments on the subject.
 
 **Additional infos**
-Informations on the context of usage.
+Information on the context of usage.
