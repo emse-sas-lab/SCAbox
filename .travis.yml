@@ -18,10 +18,9 @@ scripts:
 
 deploy:
   provider: pages:git
-  email: sami@dahoux.net
   deploy_key: deploy_scabox
   local_dir: docs/build/all/html
   keep_history: true
   edge: true
   on:
-    branch: master
+    branch: deployement
