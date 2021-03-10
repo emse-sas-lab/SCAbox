@@ -8,17 +8,17 @@ Goals
 
 This tutorial provides the procedure to **download the SCAbox framework from GitHub**. Three SCAbox repositories will be cloned from GitHub:
 
-1. The sca_ip_ repository which contains **FPGA IP cores** built for the SCAbox project
+1. The SCAbox_ip_ repository which contains **FPGA IP cores** built for the SCAbox project
 
-.. _sca_ip: https://github.com/emse-sas/sca-ip/
+.. _SCAbox_ip: https://github.com/emse-sas-lab/SCAbox-ip/
 
-2. The sca_automation_ repository that contains a **Python GUI application** and a library to retrieve side-channel acquisition data from serial port.
+2. The SCAbox_automation_ repository that contains a **Python GUI application** and a library to retrieve side-channel acquisition data from serial port.
 
-.. _sca_automation: https://github.com/emse-sas/sca-automation/
+.. _SCAbox_automation: https://github.com/emse-sas-lab/SCAbox-automation/
 
-3. The sca_demo_ repository that contains a demo design and a **C application** for side-channel acquisition.
+3. The SCAbox_demo_ repository that contains a demo design and a **C application** for side-channel acquisition.
 
-.. _sca_demo: https://github.com/emse-sas/sca-demo-tdc-aes
+.. _SCAbox_demo: https://github.com/emse-sas-lab/SCAbox-demo
 
 Requirements
 ***************************************************************
@@ -36,9 +36,9 @@ Tutorial
 
 .. code-block:: shell
 
-    $ git clone https://github.com/emse-sas/sca-ip
-    $ git clone https://github.com/emse-sas/sca-automation
-    $ git clone --recursive https://github.com/emse-sas/sca-demo-tdc-aes
+    $ git clone https://github.com/emse-sas-lab/SCAbox-ip
+    $ git clone https://github.com/emse-sas-lab/SCAbox-automation
+    $ git clone --recursive https://github.com/emse-sas-lab/SCAbox-demo
 
 3. You should get the following repositories in your SCAbox folder.
 

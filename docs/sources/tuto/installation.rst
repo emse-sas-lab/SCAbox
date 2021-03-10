@@ -87,7 +87,7 @@ Here we will add the IP repository to the project. The IP repo has been download
 
 1. Click on **Flow Navigator > Project Manager > IP Catalog**
 2. Right click on **Vivado Repository** and select **Add Repository**
-3. Select the **your_path/sca-ip/ip_repo** folder 
+3. Select the **your_path/<SCAbox-ip/ip_repo** folder 
 
 Once it is done the added IPs appear in the repository list:
 
@@ -224,7 +224,7 @@ note
 2. Right click on **impl_1** and select **Change Run Settings**
 3. Go to the **Place Design** section in the list
 4. Change the **tcl.pre** property by clicking the browse button
-5. Select new script and browse for the file **your_path/sca-demo-tdc-aes/tcl/place.tcl**
+5. Select new script and browse for the file **your_path/SCAbox-demo/tcl/place.tcl**
 6. Avoid copying sources into the project and click **Ok**
 
 ..		
@@ -335,14 +335,14 @@ you are now able to bind the hardware with the demo project.
 
 6. Right click on the application project in the **Explorer**
 7. Click on **Import Sources**
-8. Add the .c and .h files from **your_path/sca-demo-tdc-aes/src**
+8. Add the .c and .h files from **your_path/SCAbox-demo/src**
 
 .. image:: media/img/vitis_add_src.png
    :width: 450
    :alt: new proj xsa
    :align: center
 
-9. Add the module folder from **your_path/sca-demo-tdc-aes/modules**
+9. Add the module folder from **your_path/SCAbox-demo/modules**
 
 .. image:: media/img/vitis_module.png
    :width: 450

@@ -65,7 +65,7 @@ The tutorial starts here
 4. **Eject** the SD card
 
 .. note::
-   The folder containing the images is located in **your_path/SCAbox/sca_demo_tdc_aes/image**
+   The folder containing the images is located in **your_path/SCAbox/SCAbox-demo/image**
 
 2. Launch the Demo
 ---------------------------------------------------------------
@@ -102,19 +102,12 @@ To facilitate the data acquisition and visualisation SCAbox comes with a simple 
 .. note::
 	The project is compatible with Python 3.8 and latter. It is platform independent.
 
-1. To install the automation tool you must clone the sources from GitHub and install the pip requirements:
-
-.. code-block:: shell
-
-	$ git clone https://github.com/emse-sas/sca-automation
-	$ cd sca-automation
-	$ pip3 install -r requirements.txt
+1. Open a terminal at the automation tool path: **your_path/SCAbox/SCAbox-automation/src**
 
 2. Then launch the **main.py** python file with your board serial port as an argument.
 
 .. code-block:: shell
 
-	$ cd sca-automation/app
 	$ sudo python3 main.py -t /dev/ttyUSB1
 
 The following view should appear:

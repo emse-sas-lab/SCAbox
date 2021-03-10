@@ -24,6 +24,11 @@ It is recommended to have an understanding of our hardware setup before starting
 - Have a completed the installation tutorial
 - Have an understanding of our hardware setup
 
+Tutorial
+***************************************************************
+
+The tutorial starts here
+
 Download the target
 ---------------------------------------------------------------
 
@@ -42,11 +47,11 @@ Create the AXI IP core
 	- Version: 1.0
 	- Display name: CRYPTON_1.0
 	- Description: CRYPTON Block cipher
-	- IP location: your_path/SCAbox/sca-ip/ip_repo
+	- IP location: your_path/SCAbox/SCAbox-ip/ip_repo
 6. In the next window, increase the register number to **16**, you can also modify AXI name to **S_AXI**, then hit **next**.
 7. Finally, select **add IP to the repository** and hit **Finish**
 
-The AXI IP Core has been created and you should be able to see it in the IP catalog. If not please add the **your_path/SCAbox/sca-ip/ip_repo** path to your IP repository path.
+The AXI IP Core has been created and you should be able to see it in the IP catalog. If not please add the **your_path/SCAbox/SCAbox-ip/ip_repo** path to your IP repository path.
 
 Build the AXI IP core
 ---------------------------------------------------------------
@@ -146,15 +151,18 @@ Package the AXI IP core
 You should see 6 files appear: Makefile, CRYPTON_selftest.c, CRYPTON.h, CRYPTON.c, CRYPTON.tcl, CRYPTON.mdd
 These files will be used as software driver to control the CRYPTON IP from the processor. We need to modify them accordingly to the methodology adopted for the other SCAbox IPs.
 
-6. In the yourpath/SCAbox/sca-ip/ip_repo/crypton_1.0/drivers/crypton_v1_0 folder, delete the data and hdl folders and replace then by the data and hdl folders used in yourpath/SCAbox/sca-ip/ip_repo/aes_1.0/drivers/aes_1.0
+6. In the **your_path/SCAbox/SCAbox-ip/ip_repo/crypton_1.0/drivers/crypton_v1_0** folder, delete the **data** and **hdl** folders and replace them by the **data** and **hdl** folders used in **yourpath/SCAbox/SCAbox-ip/ip_repo/aes_1.0/drivers/aes_1.0**
 
-we are importing the base AES drivers in order to modify them and fit with the CRYPTON implementation
+we are importing the base AES drivers to modify them in way that they fit with the CRYPTON implementation
 
-7. Replace "aes" with "crypton" in each file names and import them as software drivers: Right click on software driver > Add Files (use view all files)
+7. Replace **aes** with **crypton** in each file names and import them as software drivers: Right click on software driver > Add Files (use view all files)
 
 You should have  Makefile, xcrypton.c, xcrypton.h, xcrypton_hw.h, crypton.tcl, crypton.mdd
 
-8. Now, open each file and replace AES and aes occurence with CRYPTON and crypton occurences. (you can use ctrl+r on vivado to replace words, use match case for caps lock)
+8. Now, open each file and replace AES and aes occurence with CRYPTON and crypton occurences. 
+
+.. info::
+	You can use CTRL+R on vivado to replace words, use match case for caps lock
 
 .. literalinclude:: media/code/xcrypton_hw.h
    :language: C
