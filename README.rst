@@ -70,10 +70,10 @@ Documentation
 
 SCAbox is an open-source project, all the sources are hosted on GitHub and organized around various repositories
 
-- `IP repository <https://github.com/emse-sas/sca-ip/>`_
-- `Acquisition demo <https://github.com/emse-sas/sca-demo-tdc-aes/>`_
-- `Attack demo <https://github.com/emse-sas/sca-automation/>`_
-- `SCAbox website  <https://github.com/emse-sas/sca_framework/>`_
+- `IP repository <https://github.com/emse-sas-lab/SCAbox-ip/>`_
+- `Acquisition demo <https://github.com/emse-sas-lab/SCAbox-demo/>`_
+- `Attack demo <https://github.com/emse-sas-lab/SCAbox-automation/>`_
+- `SCAbox website  <https://github.com/emse-sas-lab/SCAbox/>`_
 
 Each repository is provided with a technical documentation.
 This website provide general documentation around the SCA topic and the test-bench
