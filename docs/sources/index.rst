@@ -33,7 +33,8 @@ Please follow the tutorial order to setup the framework. You can stop the tutori
 - `Tuto #1 <tuto/test.html>`_ : Conduct your first FPGA-based side-channel attack using a pre-built SCAbox image. 
 - `Tuto #2 <tuto/installation.html>`_ : Install the SCABox Framework using Vivado and Vitis tools.
 - `Tuto #3 <tuto/acquisition.html>`_ : Use the framework to collect power leakage and conduct SCA attacks.
-- `Tuto #4 <tuto/create.html>`_ : Learn how to add a custom target IP to the SCABox framework.
+..
+   - `Tuto #4 <tuto/create.html>`_ : Learn how to add a custom target IP to the SCABox framework.
 
 
 ..
@@ -47,7 +48,8 @@ Please follow the tutorial order to setup the framework. You can stop the tutori
 
    tuto/home
 
-.. toctree::
+..
+   .. toctree::
    :maxdepth: 1
    :caption: Wiki
    :hidden:
