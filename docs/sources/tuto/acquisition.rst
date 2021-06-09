@@ -175,6 +175,7 @@ You learned how to iterate this acquisition and how to crop the power leakage.
 
 Keep in mind that the SCA automation python tool presented in `Tuto #1 <test.html>`_ provides a powerful way to capture leakage and transmit it via UART using our protocol. It allows to capture enough traces, that can be crop to diminish acquisition time, in order to perform a successful attack.
 
-You can customize the demo-application to change any functionally to better meet your needs. For example you can change the analyzed crypto-algorithm or the random generation of encryption data. To do this follow the `Tuto #4 <create.html>`_.
+..
+    You can customize the demo-application to change any functionally to better meet your needs. For example you can change the analyzed crypto-algorithm or the random generation of encryption data. To do this follow the `Tuto #4 <create.html>`_.
 
-Click **Next** to start the `Tuto #4 <create.html>`_: Build your Own Designs.
+    Click **Next** to start the `Tuto #4 <create.html>`_: Build your Own Designs.
