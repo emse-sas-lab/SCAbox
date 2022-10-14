@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attack &#8212; SCAbox</title>
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+
+  
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/6.1.2/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'wiki/attack';</script>
+    <link rel="shortcut icon" href="../_static/scabox_logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">SCAbox</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../tuto/home.html">
+                        Home
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" data-toggle="tooltip">
+    <a class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="fa-regular fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../tuto/home.html">
+                        Home
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" data-toggle="tooltip">
+    <a class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="fa-regular fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <div class="section" id="attack">
+<h1>Attack<a class="headerlink" href="#attack" title="Permalink to this heading">#</a></h1>
+<div class="section" id="fundamentals">
+<h2>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this heading">#</a></h2>
+<p>We are interested in side-channel attacks based on the power consumption of an SoC.
+Most of these attacks consist on performing a set of common steps :</p>
+<ol class="arabic simple">
+<li><p><em>Acquire</em> the power leakage of crypto-algorithm running</p></li>
+<li><p><em>Model</em> the power leakage for various key <em>hypothesis</em></p></li>
+<li><p><em>Correlate</em> the <em>observed power leakage</em> with the <em>modeled power leakage</em></p></li>
+<li><p><em>Iterate</em> the previous steps until the correlation is significant</p></li>
+</ol>
+<p>A key hypothesis consist on fixing the value of several bit groups of the key, supposing that these are the correct.
+The power leakage is modeled for each key hypothesis. The correlation is computed for each power leakage model.</p>
+<p>More precisely, the attack is based on a key splitting into bytes or bit groups that can be attacked.
+It can be characterized as a <em>divide and conquer</em> key inference, we divide the key into multiples part easy to guess by correlation as shown in the figure <a class="reference internal" href="#sca-aes-guess"><span class="std std-ref">Key splitting for AES128 algorithm</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="sca-aes-guess"></span><a class="reference internal image-reference" href="../_images/sca_aes_guess.png"><img alt="AES Guess Key" src="../_images/sca_aes_guess.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Key splitting for AES128 algorithm</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</div>
+<p>For example with the AES128 algorithm, it leads to formulating <span class="math notranslate nohighlight">\(256 \cdot 16\)</span> key hypothesis.
+In contrast, an explicit brute force attack in the same conditions would require formulating <span class="math notranslate nohighlight">\(2^{128}\)</span> key hypothesis.</p>
+<p>It is not always possible to retrieve the hole key with a side-channel attack. Depending on the chosen leakage model, only several bits can be guessed correctly.</p>
+<p>After modeling power leakage for the hypothesis, we use the Correlation Power Analysis (CPA) to produce a guess for the key.
+The correlation is computed using Pearson’s coefficient defined by :</p>
+<div class="math notranslate nohighlight">
+\[\rho_{X, Y} = \dfrac{E[X-\mu_X] E[Y-\mu_Y]}{\sigma_X \sigma_Y}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(X\)</span> is the instantaneous observed power leakage random variable and <span class="math notranslate nohighlight">\(Y\)</span> the modeled power leakage.
+<span class="math notranslate nohighlight">\(\mu\)</span> denotes the sample mean, <span class="math notranslate nohighlight">\(\sigma\)</span> the sample standard deviation and <span class="math notranslate nohighlight">\(E\)</span> the expectation of a random variable.</p>
+<p>The Pearson’s coefficient’s value is in the interval <span class="math notranslate nohighlight">\([-1, 1]\)</span>.
+A negative correlation denotes a inverse linear dependency between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>.
+A positive correlation denotes a direct linear dependency and a correlation near zero indicates that the two variables are not linearly correlated.</p>
+<p>The correlation coefficient depends on time <span class="math notranslate nohighlight">\(\rho_{X, Y} = \rho_{X(t), Y}\)</span>.
+It is computed all along the leakage signals and will peak at a distinctive instant if a strong guess is made as shown in the figure <a class="reference internal" href="#sca-pearson"><span class="std std-ref">Example of a successful hardware AES128 attack</span></a>.</p>
+<div class="figure align-center" id="id2">
+<span id="sca-pearson"></span><a class="reference internal image-reference" href="../_images/sca_pearson.png"><img alt="Pearson coefficient" src="../_images/sca_pearson.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Example of a successful hardware AES128 attack</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</div>
+<p>We consider that the correlation coefficient indicates how good our key hypothesis was.
+More precisely, we state that if the best absolute value of the coefficient is <span class="math notranslate nohighlight">\(N\)</span> times greater than the second best absolute correlation,
+the key has been guessed, <span class="math notranslate nohighlight">\(N\)</span> being arbitrary.
+Otherwise, we acquire more power leakage data in order to obtain a better correlation.</p>
+<p>The success condition can be express with the formula below :</p>
+<div class="math notranslate nohighlight">
+\[P^* &gt; N P^{**}\]</div>
+<p>Where we defined :</p>
+<div class="math notranslate nohighlight">
+\[P^* = \max{|\rho|}\]</div>
+</div>
+<div class="section" id="victims">
+<h2>Victims<a class="headerlink" href="#victims" title="Permalink to this heading">#</a></h2>
+<p>The victims of such a side-channel attack are all the electronic devices that are not protected against power leakages.
+Since we are performing remote side-channel attacks using FPGA our victim we preferentially will be servers provided
+with an FPGA fabric that can be shared among multiple servers users.</p>
+<p>FPGA based remote-sensors are employed in the framework to eavesdrop the power leakage of
+a crypto-algorithm running in the SoC.</p>
+<p>Therefore, at least two types of targets are sensitive to our attack, the <em>CPU</em> and the <em>FPGA accelerators</em> as shown in the figure <a class="reference internal" href="#sca-victims"><span class="std std-ref">Potential victims of our attack</span></a>.</p>
+<div class="figure align-center" id="id3">
+<span id="sca-victims"></span><a class="reference internal image-reference" href="../_images/sca_victims.png"><img alt="SCA Victims" src="../_images/sca_victims.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Potential victims of our attack</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</div>
+<p>In the first case, the power leakage of the CPU is leveraged. This leakage contains among a lot of noise due to the CPU activity,
+the information on the crypto-algorithms running.</p>
+<p>In the second case, the power leakage of the fabric is leveraged, This leakage is much more significant because the electrical activity
+is more intense than CPU’s one when crypto-algorithms are running.</p>
+</div>
+<div class="section" id="assumptions">
+<h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this heading">#</a></h2>
+<p>Side-channel attacks works only under several assumptions :</p>
+<ol class="loweralpha simple">
+<li><p>Attacker and victim share the same FPGA fabric</p></li>
+<li><p>Attacker and victim shares the same CPU</p></li>
+<li><p>The key remains the same during all the leakage acquisition</p></li>
+</ol>
+<p>Since we attempt to demonstrate the abilities of side-channel attacks, we will not consider the triggering issues.
+We will assume that the attacker is able to synchronously trigger leakage acquisition with the victim crypto-computations.</p>
+</div>
+<div class="section" id="our-setup">
+<h2>Our Setup<a class="headerlink" href="#our-setup" title="Permalink to this heading">#</a></h2>
+<div class="section" id="stages">
+<h3>Stages<a class="headerlink" href="#stages" title="Permalink to this heading">#</a></h3>
+<p>In order to standardize the stages of a side-channel attack we defined a procedure called the <em>attack pipeline</em>.
+It consists on several steps that will allow to manually or programmatically reproduce this attack.
+The procedure works for all targets under the assumptions provided above :</p>
+<ol class="arabic simple">
+<li><p>Launch sensors acquisition and crypto-algorithm</p></li>
+<li><p>Wait until crypto-algorithm end</p></li>
+<li><p>Stop sensors acquisition</p></li>
+<li><p>Send data via serial port</p></li>
+<li><p>Correlate data</p></li>
+<li><p>Guess the key</p></li>
+</ol>
+<p>The pipeline steps are resumed in the figure <a class="reference internal" href="#sca-attack-pipeline"><span class="std std-ref">Overview of the attack steps</span></a>.</p>
+<div class="figure align-center" id="id4">
+<span id="sca-attack-pipeline"></span><a class="reference internal image-reference" href="../_images/sca_attack_pipeline.png"><img alt="SCA Steps" src="../_images/sca_attack_pipeline.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Overview of the attack steps</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<div class="section" id="architecture">
+<h3>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h3>
+<p>In order to perform successfully the pipeline, we designed an hybrid bench architecture that simulates the remote side-channel attack setup.
+Our architecture is made to reproduce attacks and to be flexible, the goal being for users to customize the attack bench.
+We can split the bench into different parts located on the SoC :</p>
+<ul class="simple">
+<li><p>Acquisition control : handle sensors acquisition</p></li>
+<li><p>Sensors : capture power leakage</p></li>
+<li><p>Victim : perform cryptographic computation</p></li>
+</ul>
+<p>The figure <a class="reference internal" href="#sca-archi-overview"><span class="std std-ref">Overview of the bench architecture</span></a> detail how our architecture implement the attack pipeline.</p>
+<div class="figure align-center" id="id5">
+<span id="sca-archi-overview"></span><a class="reference internal image-reference" href="../_images/sca_archi_overview.png"><img alt="Architecture overview" src="../_images/sca_archi_overview.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-text">Overview of the bench architecture</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</div>
+<p>The acquisition controller is shared so the leakage is captured synchronously with the crypto-algorithm run.
+This allows to have consistent data among the iterations.</p>
+<p>The cores are considered shared even if they can be completely owned by the attacker or the victim.
+In our most simple configuration, one core is used both as a victim, performing crypto-computation, and as an attacker, communicating leakage and encryption data.
+More sophisticated configurations separates attacker and victim cores in order to produce a more realistic leakage.</p>
+<p>Lastly, the key validation part allows to verify if the attack guess was correct by comparing the original key with the guessed one, which can be performed only
+if the attacker is provided with the correct key in advance.</p>
+</div>
+</div>
+</div>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fundamentals">
+   Fundamentals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#victims">
+   Victims
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assumptions">
+   Assumptions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-setup">
+   Our Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stages">
+     Stages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#architecture">
+     Architecture
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022, EMSE.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.3.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>

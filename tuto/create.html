@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#4 - Build your Own Designs &#8212; SCAbox</title>
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+
+  
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/6.1.2/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tuto/create';</script>
+    <link rel="shortcut icon" href="../_static/scabox_logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">SCAbox</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">
+                        Home
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" data-toggle="tooltip">
+    <a class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="fa-regular fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+  </div>
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">
+                        Home
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" data-toggle="tooltip">
+    <a class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="fa-regular fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <div class="section" id="build-your-own-designs">
+<h1>#4 - Build your Own Designs<a class="headerlink" href="#build-your-own-designs" title="Permalink to this heading">#</a></h1>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this heading">#</a></h2>
+<p>In this tutorial you will learn how to add a custom target IP to the SCABox framework. Based on an example, you will learn how to build an AXI wrapper on top of your design to integrate it on SCABox.</p>
+<ol class="arabic simple">
+<li><p>Download the target</p></li>
+<li><p>Create the AXI IP core</p></li>
+<li><p>Build the AXI IP core</p></li>
+<li><p>Package the AXI IP core</p></li>
+<li><p>Build the Vivado Project</p></li>
+<li><p>Integrate the IP to the C program</p></li>
+<li><p>Capture target side-channel leakage</p></li>
+</ol>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h2>
+<p>You must have a complete the installation tutorial before starting this tutorial.
+It is recommended to have an understanding of our hardware setup before starting the tutorial.</p>
+<ul class="simple">
+<li><p>Any terminal emulator such as PuTTY, TeraTerm or picocom</p></li>
+<li><p>Have a completed the installation tutorial</p></li>
+<li><p>Have an understanding of our hardware setup</p></li>
+</ul>
+</div>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h2>
+<p>The tutorial starts here</p>
+<div class="section" id="download-the-target">
+<h3>Download the target<a class="headerlink" href="#download-the-target" title="Permalink to this heading">#</a></h3>
+<p>For this tutorial uses a publicly available FPGA implementation of the CRYPTON block cipher. The CRYPTON lightweight block cipher encrypts individual blocks of 64 bit length with a 64, 96, or 128 bit key.
+1. Clone the CRYPTON algorithm from this address: <a class="github reference external" href="https://github.com/huljar/mcrypton-vhdl">huljar/mcrypton-vhdl</a>.</p>
+</div>
+<div class="section" id="create-the-axi-ip-core">
+<h3>Create the AXI IP core<a class="headerlink" href="#create-the-axi-ip-core" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Launch Vivado</p></li>
+<li><p>Open the SCABox project created in the previous tutorial</p></li>
+<li><p>Click on <strong>Tools &gt; Create and Package New IP</strong></p></li>
+<li><p>Hit <strong>next</strong> and select <strong>Create AXI4 Peripheral</strong></p></li>
+<li><dl class="simple">
+<dt>The peripheral must be configured with the following details then hit <strong>next</strong>:</dt><dd><ul class="simple">
+<li><p>Name: CRYPTON</p></li>
+<li><p>Version: 1.0</p></li>
+<li><p>Display name: CRYPTON_1.0</p></li>
+<li><p>Description: CRYPTON Block cipher</p></li>
+<li><p>IP location: your_path/SCAbox/SCAbox-ip/ip_repo</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>In the next window, increase the register number to <strong>16</strong>, you can also modify AXI name to <strong>S_AXI</strong>, then hit <strong>next</strong>.</p></li>
+<li><p>Finally, select <strong>add IP to the repository</strong> and hit <strong>Finish</strong></p></li>
+</ol>
+<p>The AXI IP Core has been created and you should be able to see it in the IP catalog. If not please add the <strong>your_path/SCAbox/SCAbox-ip/ip_repo</strong> path to your IP repository path.</p>
+</div>
+<div class="section" id="build-the-axi-ip-core">
+<h3>Build the AXI IP core<a class="headerlink" href="#build-the-axi-ip-core" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Enter the IP catalog</p></li>
+<li><p><strong>Right click</strong> on the newly created CRYPTON_1.0 IP and select <strong>Edit in IP Packager</strong>. Hit <strong>OK</strong>. A new project window should open</p></li>
+</ol>
+<p>In the new project you should see two VHDL source appear. The top one is will be the interface with the outside world. It also contains the AXI component that will handle the communication with the zynq processor. Now, we need to add the CRYPTON sources to the project.</p>
+<ol class="arabic simple" start="3">
+<li><p>Click on <strong>File &gt; Add Sources</strong></p></li>
+<li><p>Select “Add or create design sources” then hit <strong>next</strong></p></li>
+<li><p>On the next window hit <strong>+</strong> and add all the CRYPTON sources except “axi_stream_wrapper.vhd” from the CRYPTON project <strong>hdl</strong> folder downloaded on github.</p></li>
+<li><p>Hit <strong>Finish</strong>, the mycrypton_top module should appear on the Vivado Sources window.</p></li>
+</ol>
+<p>Now we have to interface the CRYPTON module with AXI peripheral. First, we need <strong>clock</strong>, <strong>done</strong> and <strong>start</strong> signals for SCAbox to operate properly.</p>
+<ol class="arabic simple" start="7">
+<li><p>Modify the Crypton_v1_0 vhdl source file by adding <strong>keysize</strong> parameter and <strong>clock</strong>, <strong>done</strong> and <strong>start</strong> signals</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">CRYPTON_v1_0</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+<span class="w">	</span><span class="k">generic</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- Users to add parameters here</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- User parameters ends</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- Do not modify the parameters beyond this line</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- Parameters of Axi Slave Bus Interface S00_AXI</span><span class="w"></span>
+<span class="w">		</span><span class="n">C_S00_AXI_DATA_WIDTH</span><span class="w">	</span><span class="o">:</span><span class="w"> </span><span class="kt">integer</span><span class="w">	</span><span class="o">:=</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"></span>
+<span class="w">		</span><span class="n">C_S00_AXI_ADDR_WIDTH</span><span class="w">	</span><span class="o">:</span><span class="w"> </span><span class="kt">integer</span><span class="w">	</span><span class="o">:=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">	</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="k">port</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- Users to add ports here</span><span class="w"></span>
+<span class="hll"><span class="w">		</span><span class="n">clock_i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">		</span><span class="n">start_o</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">		</span><span class="n">done_o</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="w">		</span><span class="c1">-- User ports ends</span><span class="w"></span>
+<span class="w">		</span><span class="c1">-- Do not modify the ports beyond this line</span><span class="w"></span>
+<span class="w">		</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>On the same file, Add the parameters to the AXI component and port map.</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="k">component</span><span class="w"> </span><span class="nc">CRYPTON_v1_0_S00_AXI</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+<span class="w">		</span><span class="k">generic</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="n">C_S_AXI_DATA_WIDTH</span><span class="w">	</span><span class="o">:</span><span class="w"> </span><span class="kt">integer</span><span class="w">	</span><span class="o">:=</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">C_S_AXI_ADDR_WIDTH</span><span class="w">	</span><span class="o">:</span><span class="w"> </span><span class="kt">integer</span><span class="w">	</span><span class="o">:=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">		</span><span class="p">);</span><span class="w"></span>
+<span class="w">		</span><span class="k">port</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="n">clock_i</span><span class="w">       </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="n">start_o</span><span class="w">       </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="n">done_o</span><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="w">            </span><span class="c1">-- ETC</span><span class="w"></span>
+<span class="w">            </span><span class="n">S_AXI_ACLK</span><span class="w">	</span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">S_AXI_ARESETN</span><span class="w">	</span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="k">generic</span><span class="w"> </span><span class="k">map</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">C_S_AXI_DATA_WIDTH</span><span class="w">	</span><span class="o">=&gt;</span><span class="w"> </span><span class="n">C_S00_AXI_DATA_WIDTH</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">C_S_AXI_ADDR_WIDTH</span><span class="w">	</span><span class="o">=&gt;</span><span class="w"> </span><span class="n">C_S00_AXI_ADDR_WIDTH</span><span class="w"></span>
+<span class="w">	</span><span class="p">)</span><span class="w"></span>
+<span class="w">	</span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">clock_i</span><span class="w">       </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">clock_i</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="n">start_o</span><span class="w">       </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">start_o</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="n">done_o</span><span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">done_o</span><span class="p">,</span><span class="w"></span>
+</span><span class="w">        </span><span class="c1">--ETC</span><span class="w"></span>
+<span class="w">        </span><span class="n">S_AXI_ACLK</span><span class="w">	</span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s00_axi_aclk</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">S_AXI_ARESETN</span><span class="w">	</span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s00_axi_aresetn</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">S_AXI_AWADDR</span><span class="w">	</span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s00_axi_awaddr</span><span class="p">,</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Now, on the CRYPTON_v1_0_S00_AXI vhdl source file, we need to modify the entity according to the new IOs.</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">entity</span><span class="w"> </span><span class="nc">CRYPTON_v1_0_S00_AXI</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+<span class="w">	</span><span class="k">generic</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- Users to add parameters here</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- User parameters ends</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- Do not modify the parameters beyond this line</span><span class="w"></span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">-- Width of S_AXI data bus</span><span class="w"></span>
+<span class="w">        </span><span class="n">C_S_AXI_DATA_WIDTH</span><span class="w">	</span><span class="o">:</span><span class="w"> </span><span class="kt">integer</span><span class="w">	</span><span class="o">:=</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- Width of S_AXI address bus</span><span class="w"></span>
+<span class="w">        </span><span class="n">C_S_AXI_ADDR_WIDTH</span><span class="w">	</span><span class="o">:</span><span class="w"> </span><span class="kt">integer</span><span class="w">	</span><span class="o">:=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="w">	</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="k">port</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- Users to add ports here</span><span class="w"></span>
+<span class="hll"><span class="w">        </span><span class="n">clock_i</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="n">start_o</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="n">done_o</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="w">        </span><span class="c1">-- User ports ends            </span><span class="w"></span>
+<span class="w">        </span><span class="c1">-- Do not modify the ports beyond this line</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Then we add the crypton module to our AXI peripheral</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="w">        </span><span class="k">generic</span><span class="p">(</span><span class="n">k</span><span class="o">:</span><span class="w"> </span><span class="n">key_enum</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">K_128</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="k">port</span><span class="p">(</span><span class="w"></span>
+</span><span class="hll"><span class="w">             </span><span class="n">plaintext</span><span class="o">:</span><span class="w">  </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">63</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">             </span><span class="n">key</span><span class="o">:</span><span class="w">        </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">key_bits</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">             </span><span class="n">clk</span><span class="o">:</span><span class="w">        </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">             </span><span class="n">reset</span><span class="o">:</span><span class="w">      </span><span class="k">in</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">             </span><span class="n">ciphertext</span><span class="o">:</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">63</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="k">component</span><span class="p">;</span><span class="w"></span>
+</span><span class="w">    </span>
+</pre></div>
+</div>
+<p><strong>Plaintext, ciphertext, key, done, start and reset</strong> signals are read or written by the processor. We need to interface them using AXI registers</p>
+<ol class="arabic simple" start="11">
+<li><p>First we need to create the signals that will serve as interface.</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="c1">---- Signals for user logic register space example</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="k">constant</span><span class="w"> </span><span class="n">active_cycles</span><span class="o">:</span><span class="w"> </span><span class="kt">natural</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">14</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">data_is</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">63</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">data_os</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">63</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">ip_ciphertext</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">63</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">key_s</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">127</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">reset_s</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">start_s</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">done_s</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">std_logic</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">signal</span><span class="w"> </span><span class="n">counter</span><span class="o">:</span><span class="w"> </span><span class="kt">natural</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">64</span><span class="p">;</span><span class="w"></span>
+</span><span class="w">	</span><span class="c1">--------------------------------------------------</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>The signals flowing from the FPGA to the CPU are <strong>done</strong> and <strong>ciphertext</strong>. We connect them to any AXI register that is not use for reads.</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="k">variable</span><span class="w"> </span><span class="n">loc_addr</span><span class="w"> </span><span class="o">:</span><span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">OPT_MEM_ADDR_BITS</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="k">begin</span><span class="w"></span>
+<span class="w">	    </span><span class="c1">-- Address decoding for reading registers</span><span class="w"></span>
+<span class="w">	    </span><span class="n">loc_addr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">axi_araddr</span><span class="p">(</span><span class="n">ADDR_LSB</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">OPT_MEM_ADDR_BITS</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="n">ADDR_LSB</span><span class="p">);</span><span class="w"></span>
+<span class="w">	    </span><span class="k">case</span><span class="w"> </span><span class="n">loc_addr</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;0000&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg0</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;0001&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg1</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;0010&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg2</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;0011&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg3</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;0100&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg4</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;0101&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg5</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;0110&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="hll"><span class="w">	           </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">data_os</span><span class="p">(</span><span class="mi">63</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;0111&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="hll"><span class="w">	           </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">data_os</span><span class="p">(</span><span class="mi">31</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;1000&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg8</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;1001&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg9</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;1010&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg10</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;1011&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg11</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;1100&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg12</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;1101&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="hll"><span class="w">              </span><span class="n">reg_data_out</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">done_s</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">              </span><span class="n">reg_data_out</span><span class="p">(</span><span class="n">C_S_AXI_DATA_WIDTH</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="k">others</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">);</span><span class="w"></span>
+</span><span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;1110&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg14</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="mb">b&quot;1111&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg15</span><span class="p">;</span><span class="w"></span>
+<span class="w">	      </span><span class="k">when</span><span class="w"> </span><span class="k">others</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">	        </span><span class="n">reg_data_out</span><span class="w">  </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="k">others</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">	    </span><span class="k">end</span><span class="w"> </span><span class="k">case</span><span class="p">;</span><span class="w"></span>
+<span class="w">	</span><span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="p">;</span><span class="w"> </span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>The signals flowing from the CPU to the FPGA are <strong>key</strong>, <strong>plaintext</strong> and <strong>start</strong>. We connect them to any AXI register that is not use for writes.</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="w">    </span><span class="n">data_is</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">slv_reg0</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">slv_reg1</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="n">key_s</span><span class="w"> </span><span class="o">&lt;=</span><span class="w">  </span><span class="n">slv_reg8</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">slv_reg9</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">slv_reg10</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">slv_reg11</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="n">reset_s</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">start_s</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="n">start_o</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">start_s</span><span class="p">;</span><span class="w"></span>
+</span><span class="w">    </span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>To detect the end of the encryption we use a process that generates the done signal when the number of encryption clock cycle is reached</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="w">    </span><span class="k">process</span><span class="p">(</span><span class="n">clock_i</span><span class="p">,</span><span class="n">S_AXI_ARESETN</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span><span class="k">begin</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">S_AXI_ARESETN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">    </span>
+</span><span class="hll"><span class="w">           </span><span class="n">data_os</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="sc">&#39;0&#39;</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">           </span><span class="n">done_s</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">           </span><span class="n">counter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="k">else</span><span class="w">   </span>
+</span><span class="hll"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rising_edge</span><span class="w"> </span><span class="p">(</span><span class="n">clock_i</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span>
+</span><span class="hll"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">start_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">done_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span>
+</span><span class="hll"><span class="w">                </span>
+</span><span class="hll"><span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">active_cycles</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="n">done_s</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="n">data_os</span><span class="p">(</span><span class="mi">63</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ip_ciphertext</span><span class="p">(</span><span class="mi">63</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="n">data_os</span><span class="p">(</span><span class="mi">31</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ip_ciphertext</span><span class="p">(</span><span class="mi">31</span><span class="w"> </span><span class="k">downto</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+</span><span class="hll"><span class="w">                        </span><span class="n">counter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">                    </span><span class="k">else</span><span class="w"></span>
+</span><span class="hll"><span class="w">                        </span><span class="n">counter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">counter</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">                    </span><span class="k">end</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">                    </span>
+</span><span class="hll"><span class="w">                </span><span class="k">elsif</span><span class="p">(</span><span class="n">start_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">done_s</span><span class="o">=</span><span class="sc">&#39;1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span>
+</span><span class="hll"><span class="w">                </span><span class="c1">--do nothing  </span><span class="w"></span>
+</span><span class="hll"><span class="w">                               </span>
+</span><span class="hll"><span class="w">                </span><span class="k">else</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span>
+</span><span class="hll"><span class="w">                </span><span class="n">done_s</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span>
+</span><span class="hll"><span class="w">                </span><span class="k">end</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">                   </span>
+</span><span class="hll"><span class="w">            </span><span class="k">end</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="k">end</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">       </span>
+</span><span class="hll"><span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="k">process</span><span class="p">;</span><span class="w"></span>
+</span><span class="hll"><span class="w">    </span>
+</span><span class="hll"><span class="w">    </span><span class="n">done_o</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">done_s</span><span class="p">;</span><span class="w"></span>
+</span><span class="w">    </span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="14">
+<li><p>Finally, we add the port map of the CRYPTON module to establish the final connection</p></li>
+</ol>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="w">     </span><span class="k">generic</span><span class="w"> </span><span class="k">map</span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">K_128</span><span class="p">)</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="k">port</span><span class="w"> </span><span class="k">map</span><span class="p">(</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="n">plaintext</span><span class="w">  </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">data_is</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="n">key</span><span class="w">   </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">key_s</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="n">clk</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">clock_i</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="n">reset</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">reset_s</span><span class="p">,</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="n">ciphertext</span><span class="w">  </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ip_ciphertext</span><span class="w"></span>
+</span><span class="hll"><span class="w">        </span><span class="p">);</span><span class="w"></span>
+</span><span class="w">    </span><span class="c1">-- User logic ends</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The IP is ready to be synthetized and packaged.</p>
+</div>
+<div class="section" id="package-the-axi-ip-core">
+<h3>Package the AXI IP core<a class="headerlink" href="#package-the-axi-ip-core" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Click <strong>run synthesis</strong> to verify that the IP has been properly created.</p></li>
+<li><p>If no error or critical warning appear click <strong>Package IP</strong> else correct the errors.</p></li>
+<li><p>In the package IP identification window enter your ID</p></li>
+<li><p>In the file group window enter software drivers.</p></li>
+</ol>
+<p>You should see 6 files appear: Makefile, CRYPTON_selftest.c, CRYPTON.h, CRYPTON.c, CRYPTON.tcl, CRYPTON.mdd
+These files will be used as software driver to control the CRYPTON IP from the processor. We need to modify them accordingly to the methodology adopted for the other SCAbox IPs.</p>
+<ol class="arabic simple" start="6">
+<li><p>In the <strong>your_path/SCAbox/SCAbox-ip/ip_repo/crypton_1.0/drivers/crypton_v1_0</strong> folder, delete the <strong>data</strong> and <strong>hdl</strong> folders and replace them by the <strong>data</strong> and <strong>hdl</strong> folders used in <strong>yourpath/SCAbox/SCAbox-ip/ip_repo/aes_1.0/drivers/aes_1.0</strong></p></li>
+</ol>
+<p>we are importing the base AES drivers to modify them in way that they fit with the CRYPTON implementation</p>
+<ol class="arabic simple" start="7">
+<li><p>Replace <strong>aes</strong> with <strong>crypton</strong> in each file names and import them as software drivers: Right click on software driver &gt; Add Files (use view all files)</p></li>
+</ol>
+<p>You should have  Makefile, xcrypton.c, xcrypton.h, xcrypton_hw.h, crypton.tcl, crypton.mdd</p>
+<ol class="arabic simple" start="8">
+<li><p>Now, open each file and replace AES and aes occurence with CRYPTON and crypton occurences.</p></li>
+</ol>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#define XCRYPTON_WORDS_SIZE 4</span>
+<span class="cp">#define XCRYPTON_BYTES_SIZE 16</span>
+
+<span class="cp">#define XCRYPTON_DATA_IN0_OFFSET 0x00</span>
+<span class="cp">#define XCRYPTON_DATA_IN1_OFFSET 0x04</span>
+<span class="cp">#define XCRYPTON_DATA_IN2_OFFSET 0x08</span>
+<span class="cp">#define XCRYPTON_DATA_IN3_OFFSET 0x0C</span>
+
+<span class="cp">#define XCRYPTON_DATA_OUT0_OFFSET 0x10</span>
+<span class="cp">#define XCRYPTON_DATA_OUT1_OFFSET 0x14</span>
+<span class="cp">#define XCRYPTON_DATA_OUT2_OFFSET 0x18</span>
+<span class="cp">#define XCRYPTON_DATA_OUT3_OFFSET 0x1C</span>
+
+<span class="cp">#define XCRYPTON_DATA_KEY0_OFFSET 0x20</span>
+<span class="cp">#define XCRYPTON_DATA_KEY1_OFFSET 0x24</span>
+<span class="cp">#define XCRYPTON_DATA_KEY2_OFFSET 0x28</span>
+<span class="cp">#define XCRYPTON_DATA_KEY3_OFFSET 0x2c</span>
+
+<span class="cp">#define XCRYPTON_STATUS_WR_OFFSET 0x30</span>
+<span class="cp">#define XCRYPTON_STATUS_RD_OFFSET 0x34</span>
+
+<span class="cp">#define XCRYPTON_STATUS_NULL_MASK 0x0</span>
+<span class="cp">#define XCRYPTON_STATUS_RESET_MASK 0x1</span>
+<span class="cp">#define XCRYPTON_STATUS_START_MASK 0x2</span>
+<span class="cp">#define XCRYPTON_STATUS_INV_MASK 0x4</span>
+<span class="cp">#define XCRYPTON_STATUS_DONE_MASK 0x1</span>
+
+<span class="cp">#define XCRYPTON_SetStatus1(status, reg) \</span>
+<span class="cp">    (reg | status)</span>
+<span class="cp">#define XCRYPTON_SetStatus0(status, reg) \</span>
+<span class="cp">    (reg &amp; ~status)</span>
+<span class="cp">#define XCRYPTON_GetStatus(status, reg) \</span>
+<span class="cp">    (reg &amp; status)</span>
+
+<span class="cp">#define XCRYPTON_ReadReg(addr, offset) \</span>
+<span class="cp">    Xil_In32((addr) + (offset))</span>
+<span class="cp">#define XCRYPTON_WriteReg(addr, offset, data) \</span>
+<span class="cp">    Xil_Out32((addr) + (offset), (data))</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Package the IP and click on close project.</p></li>
+</ol>
+</div>
+<div class="section" id="build-the-vivado-project">
+<h3>Build the vivado project<a class="headerlink" href="#build-the-vivado-project" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>In the SCABox Vivado project open the <strong>block design</strong></p></li>
+<li><p>Then, click on the IP catalog and right click on <strong>AXI Peripheral</strong> to hit <strong>refresh all repositories</strong></p>
+<p>The CRYPTON block cipher should appear.</p>
+</li>
+<li><p>Double click on CRYPTON IP and select <strong>Add IP to Block Design</strong></p></li>
+<li><p>Remove the previously used AES IP and replace its connections by those of the CRYPTON IP</p></li>
+<li><p>Now the design is ready, you can click on generate bitstream</p></li>
+<li><p>On success, select <strong>File &gt; Export &gt; Export</strong> Hardware, (check <strong>include Bitstream</strong>)</p></li>
+<li><p>Launch the SDK by selecting <strong>File &gt; Launch SDK</strong></p></li>
+</ol>
+</div>
+<div class="section" id="integrate-the-ip-to-the-c-program">
+<h3>Integrate the IP to the C program<a class="headerlink" href="#integrate-the-ip-to-the-c-program" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>On Xilinx SDK or Vitis, open the hw_platform project arborescence and open the drivers folder arborescence.</p></li>
+</ol>
+<p>You should see the crypton software driver appear.</p>
+<ol class="arabic simple" start="2">
+<li><p>Now right click on the BSP project and select <strong>Re-generate BSP Sources</strong></p></li>
+</ol>
+<p>You should see <strong>crypton_v1_0</strong> folder appear in <strong>yourBSP/ps7_cortexa9_0/libsrc</strong></p>
+<ol class="arabic simple" start="3">
+<li><p>Now you can rebuild the C/C++ index <strong>Project &gt; C/C++index &gt; Rebuild</strong> and build all the projects <strong>Project &gt; Build All</strong></p></li>
+</ol>
+<p>The project is now ready and will be modified to add CRYPTON ip core support.</p>
+<ol class="arabic simple" start="4">
+<li><p>Open the main.c file contained in SCABox/src/main.c and create the CRYPTON definition</p></li>
+</ol>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cp">#define SCABOX_TDC</span>
+<span class="c1">//#define SCABOX_RO</span>
+<span class="c1">//#define SCABOX_AES</span>
+<span class="c1">//#define SCABOX_PRESENT</span>
+<span class="c1">//#define SCABOX_KLEIN</span>
+<span class="cp">#define SCABOX_CRYPTON</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Then you will have to add the crypton commands in main.c and main.h files.</p></li>
+</ol>
+<p>The procedure takes some time</p>
+<ol class="arabic simple" start="6">
+<li><p>Once done, build the project and conenct through JTAG to the Zybo board.</p></li>
+</ol>
+</div>
+<div class="section" id="capture-target-side-channel-leakage">
+<h3>Capture target side-channel leakage<a class="headerlink" href="#capture-target-side-channel-leakage" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open a serial tool, connect to the Zybo at 921600 baudrate.</p></li>
+<li><p>Test the crypton module with the following command: <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">crypton</span> <span class="pre">-m</span> <span class="pre">hw</span> <span class="pre">-k</span> <span class="pre">ffff</span> <span class="pre">-d</span> <span class="pre">ffff</span></code></p></li>
+</ol>
+<p>The result should be</p>
+</div>
+</div>
+</div>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals">
+   Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements">
+   Requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial">
+   Tutorial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-the-target">
+     Download the target
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-the-axi-ip-core">
+     Create the AXI IP core
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-the-axi-ip-core">
+     Build the AXI IP core
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#package-the-axi-ip-core">
+     Package the AXI IP core
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-the-vivado-project">
+     Build the vivado project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrate-the-ip-to-the-c-program">
+     Integrate the IP to the C program
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#capture-target-side-channel-leakage">
+     Capture target side-channel leakage
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022, EMSE.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.2.3.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>
