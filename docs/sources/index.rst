@@ -17,8 +17,6 @@ SCAbox aims at popularizing hardware security by enabling  SCA  experiments at l
 - **Build** your own FPGA-based side-channel sensors.
 - **Characterize** the SCA leakage of your hardware and software algorithm implementation
 
-For more information please check out our paper introducing SCAbox: PAPER_PATH
-
 Content
 ---------------------------------------------------------------
 
@@ -59,4 +57,17 @@ Please follow the tutorial order to setup the framework. You can stop the tutori
 Cite
 ---------------------------------------------------------------
 
-Anonymous
+You can cite this project using the articles below that describe the TDC and RO sensors implemented in SCAbox.
+
+`Remote Side-Channel Attacks on Heterogeneous SoC <https://hal.archives-ouvertes.fr/hal-02380092>`_ 
+
+*Joseph Gravellier, Jean-Max Dutertre, Yannick Teglia, Philippe Loubet-Moundi, Olivier Francis. Remote Side-Channel Attacks on Heterogeneous SoC. Smart Card Research and Advanced Applications, 18th International Conference, CARDIS 2019, Nov 2019, Pragues, Czech Republic.*
+
+`High-Speed Ring Oscillator based Sensors for Remote Side-Channel Attacks on FPGAs  <https://hal.archives-ouvertes.fr/hal-02481050>`_ 
+
+*Joseph Gravellier and Jean-Max Dutertre and Yannick Teglia and Philippe Loubet-Moundi. High-Speed Ring Oscillator based Sensors for Remote Side-Channel Attacks on FPGAs, 2019 International Conference on ReConFigurable Computing and FPGAs (ReConFig).*
+
+Authors
+---------------------------------------------------------------
+
+Sami Dahoux, Joseph Gravellier, Jean-Max Dutertre.

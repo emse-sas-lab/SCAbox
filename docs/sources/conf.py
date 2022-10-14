@@ -12,31 +12,35 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('./wiki'))
-sys.path.insert(0, os.path.abspath('./'))
-sys.path.insert(0, os.path.abspath('./tuto'))
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.append("../../") # to locate scabox module
+
+
+#add_module_names = False
 
 # -- Project information -----------------------------------------------------
 master_doc = 'index'
 project = 'SCAbox'
-copyright = '2020, Anonymous'
-author = 'Anonymous'
+copyright = '2022, EMSE'
+author = 'Joseph Gravellier, Sami Dahoux, Jean-Max Dutertre'
 
 # The full version, including alpha/beta/rc tags
-release = '1.1.0'
+release = '0.0.1'
 
 
-# -- General configuration ---------------------------------------------------
+# -----------------------------------------------------------------------------
+# General configuration
+# -----------------------------------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx.ext.autodoc",
-    "sphinx_rtd_theme",
-    "sphinx.ext.napoleon",
-    "sphinxarg.ext",
-    "recommonmark",
+'sphinx.ext.autodoc',
+'sphinx.ext.autosummary',
+'sphinx.ext.intersphinx',
+#'numpydoc',
+#'myst_nb',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -47,17 +51,27 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+exclude_dirs = []
+default_role = "autolink"
+add_function_parentheses = False
 
-# -- Options for HTML output -------------------------------------------------
+# -----------------------------------------------------------------------------
+# HTML output
+# -----------------------------------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-    #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'pydata_sphinx_theme'
+html_logo = ""
+html_favicon = "media/img/scabox_logo.ico"
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
+html_title = project
 html_static_path = []
+html_last_updated_fmt = '%b %d, %Y'
 
-autodoc_member_order = 'bysource'
+html_additional_pages = {}
+html_use_modindex = True
+html_domain_indices = False
+html_copy_source = False
+html_file_suffix = '.html'
+htmlhelp_basename = 'scabox'
+
+

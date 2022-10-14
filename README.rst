@@ -86,7 +86,7 @@ This website provide general documentation around the SCA topic and the test-ben
 Authors
 ===============================================================
 
-Anonymous
+Sami Dahoux, Joseph Gravellier, Jean-Max Dutertre, Yannick Teglia, Philippe Loubet-Moundi.
 
 Contributing
 ---------------------------------------------------------------
@@ -104,4 +104,4 @@ License
 
 All the contents of the SCAbox project are licensed under the `MIT license <https://choosealicense.com/licenses/mit/>`_ provided in each GitHub repository.
 
-Copyright (c) 2020 Anonymous
+Copyright (c) 2020 EMSE

@@ -20,7 +20,6 @@ This tutorial will help you in performing acquisition with a serial command:
   - If you want to learn more about the commands available in the demo you can displayed the help by typing ``man``
 
 
-
 Requirements
 ***************************************************************
 
@@ -173,7 +172,9 @@ Conclusion
 In this tutorial you learned how to launch sensor's power leakage acquisition during a cryptographic encryption.
 You learned how to iterate this acquisition and how to crop the power leakage.
 
-Keep in mind that the SCA automation python tool presented in `Tuto #1 <test.html>`_ provides a powerful way to capture leakage and transmit it via UART using our protocol. It allows to capture enough traces, that can be crop to diminish acquisition time, in order to perform a successful attack.
+..
+
+    Keep in mind that the SCA automation python tool presented in `Tuto #1 <test.html>`_ provides a powerful way to capture leakage and transmit it via UART using our protocol. It allows to capture enough traces, that can be crop to diminish acquisition time, in order to perform a successful attack.
 
 ..
     You can customize the demo-application to change any functionally to better meet your needs. For example you can change the analyzed crypto-algorithm or the random generation of encryption data. To do this follow the `Tuto #4 <create.html>`_.

@@ -16,7 +16,11 @@ This tutorial provides the procedure to **download the SCAbox framework from Git
 
 .. _SCAbox_automation: https://github.com/emse-sas-lab/SCAbox-automation/
 
-3. The SCAbox_demo_ repository that contains a demo design and a **C application** for side-channel acquisition.
+3. The SCAbox_notebook_ repository that contains a **jupyter notebook** to automate attacks and a library to retrieve side-channel acquisition data from serial port. This is an alternative to SCAbox_automation GUI.
+
+.. _SCAbox_notebook: https://github.com/emse-sas-lab/SCAbox-notebook/
+
+4. The SCAbox_demo_ repository that contains a demo design and a **C application** for side-channel acquisition.
 
 .. _SCAbox_demo: https://github.com/emse-sas-lab/SCAbox-demo
 
@@ -35,9 +39,10 @@ Tutorial
 2. Open a **terminal** from this folder and enter the following commands. 
 
 .. code-block:: shell
-
+ 
     $ git clone https://github.com/emse-sas-lab/SCAbox-ip
     $ git clone https://github.com/emse-sas-lab/SCAbox-automation
+    $ git clone https://github.com/emse-sas-lab/SCAbox-notebook
     $ git clone --recursive https://github.com/emse-sas-lab/SCAbox-demo
 
 3. You should get the following repositories in your SCAbox folder.

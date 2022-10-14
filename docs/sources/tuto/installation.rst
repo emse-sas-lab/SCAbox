@@ -248,6 +248,9 @@ note
    :width: 300
    :alt: bitstream success
    :align: center
+   
+.. note::
+	The critical warning "The design failed to meet the timing requirements" is directly related to the TDC implementation. You must ignore it.
 
 3. Click on **File > Export > Export Hardware**
 4. Select **Fixed** 
@@ -266,6 +269,7 @@ all our hardware and drivers for the design we created.
 	If you are using Xilinx SDK instead of Vitis, you do not have a .xsa file but a .hdf file (hardware definition).
 
 
+	
 Install the Software
 ---------------------------------------------------------------
 
@@ -276,14 +280,14 @@ you are now able to bind the hardware with the demo project.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Launch Vitis
-2. Select your project path for the workspace
+2. Select your project path for the workspace and press **Launch**
 
 .. image:: media/img/vitis_workspace.png
    :width: 450
    :alt: export hw
    :align: center
 
-3. Quit the **Welcome** view
+3. Quit the *Welcome* view
 
 .. image:: media/img/vitis_base.png
    :width: 640
@@ -326,14 +330,14 @@ you are now able to bind the hardware with the demo project.
    :align: center
 
 4. Ensure the standalone domain is selected, then select **Next**
-5. Select the **Empty Application** template, then select **Finish**
+5. Select the **Empty Application (C)** template, then select **Finish**
 
 .. image:: media/img/vitis_proj_view.png
    :width: 640
    :alt: new proj xsa
    :align: center
 
-6. Right click on the application project in the **Explorer**
+6. Right click on the application project *SCAboxAPP* in the **Explorer**
 7. Click on **Import Sources**
 8. Add the .c and .h files from **your_path/SCAbox/SCAbox-demo/src**
 
@@ -352,7 +356,7 @@ you are now able to bind the hardware with the demo project.
 4. Add includes to the project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Right click on the application project previously created in the **Explorer**
+1. Again, right click on the *SCAboxAPP* project 
 2. Select **C/C++ Build Settings**
 3. In the **Settings** tab go to **ARM v7 gcc compiler > Directories**
 4. Add each directory in the **src** folder as **Include Paths**
@@ -389,14 +393,11 @@ The project modules contain main files that need to be excluded from build to av
 
 It is likely that the default linker script will set the heap and stack size to smaller values than what is needed for the demo.
 
-1. Right click on the application project previously created on the **Explorer**
+1. Right click on the application project *SCAboxAPP*
 2. Select **Generate linker script**
 3. Modify the **Heap Size** to 32KB
 4. Modify the **Stack Size** to 32KB
 5. Select **Generate** and overwrite the previous file
-
-.. note:: 
-   These values are arbitrary and might not be optimal be guarantee that the demo do not overflows.
 
 .. image:: media/img/linker.png
    :width: 500
@@ -409,7 +410,7 @@ Launch the application
 1. Build the project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Select **Project** and press **Build All**
+1. In the vitis menu, select the **Project** menu and press **Build All**
 
 If no error occurs the project is ready to be downloaded into the Zynq board.
 
@@ -438,7 +439,7 @@ If no error occurs the project is ready to be downloaded into the Zynq board.
 3. Run the application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Right click on the application project
+1. Right click on the application project *SCAboxAPP*
 2. Click on **Run As > Launch on Hardware**
 3. Switch to the terminal session
 

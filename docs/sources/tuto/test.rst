@@ -98,53 +98,59 @@ You can now use the available serial commands to perform AES encryptions, side-c
 3. Collect the AES Leakage
 ---------------------------------------------------------------
 
-To facilitate the data acquisition and visualisation SCAbox comes with a simple application built in python. This application connects directly to the Zynq board through a serial communication and can exchange data and commands with the device.
+To facilitate the data acquisition and visualisation SCAbox comes with a simple notebook. This jupyter notebook connects directly to the Zynq board through a serial communication and can exchange data and commands with the device.
 
 .. note::
-	The project is compatible with Python 3.8 and latter. It is platform independent.
+	You can install jupyter notebook using `pip install jupyterlab`
 
-1. Open a terminal at the automation tool path: **your_path/SCAbox/SCAbox-automation/src**
+1. Open a terminal at the notebook path: **your_path/SCAbox/SCAbox-notebook/src**
 
-2. Then launch the **main.py** python file with your board serial port as an argument.
+2. Then launch jupyter-lab and click on scabox.ipynb
 
 .. code-block:: shell
 
-	$ sudo python3 main.py -t /dev/ttyUSB1
+	$ jupyter-lab
 
 The following view should appear:
 
-.. image:: media/img/SCA_Automation1.png
+.. image:: media/img/notebook_welcome.png
    :width: 800
-   :alt: FIFO output simple
+   :alt: SCAbox jupyter demo
    :align: center
 
-3. Select the following parameters   
+3. Import scabox SCA library by launching the following cell
 
-- **Iteration**: 500
-- **Chunk**: 20
-- **Mode**: HW
-- **Model**: Inv Sbox R10
+.. code-block:: shell
 
-This will launch 500*20 = 10000 AES acquisitions and compute CPA on the last round. 
+	from scabox import *
 
-4. Press **Launch**
+4. Connect to your Zybo using the following cell
+	
+.. code-block:: shell
 
-The AES leakage can be easily recognized thanks to its ten characteristic rounds that create high power consumption spikes. The magnitude spectrum
-plotted in the bottom indicates the leakage amplitude at each frequency. 
+	zb = ZyboSerial(port=None,baudrate=921600, timeout=1)
+	
+5. Launch a demo cpa
 
-.. image:: media/img/SCA_Leakage1.png
+- **n_trace**: 2500
+- **chunk_size**: 250
+- **n_sample**: 400
+- **i_byte**: 0
+
+.. code-block:: shell
+
+	Demo.hw_aes_cpa_demo(zb,i_byte=0,n_trace=2500,n_sample=400,chunk_size=250)
+
+This will launch 2500 AES acquisitions and compute CPA on the last round. 
+
+.. image:: media/img/notebook_cpa_results.png
    :width: 800
-   :alt: AES Leakage results
+   :alt: SCAbox jupyter demo cpa
    :align: center
 
-5. Select **Correlation**
-
-Two plots illustrate the CPA attack results for a specific key byte (here byte 1). On the top, we can see the correct key candidate (in red) emerging from the other candidates (in gray) after less than 100 acquisitions. On the bottom the temporal representation indicates that the key leaks around the sample 300. The actual implementation of the LastRound CPA works only on the 4 first bytes of the AES. 
-
-.. image:: media/img/SCA_Results1.png
-   :width: 800
-   :alt: CPA results
-   :align: center
+Results are updated dynamically every 250 traces. The temporal correlation indicates the current key guess. 
+On the right, the concord view shows the key guess progression over the number of traces used. Here it took less 
+than 250 traces to extract the secret key byte. 
 
 Conclusion
 ***************************************************************
